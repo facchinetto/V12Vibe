@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <title>Carros Elétricos do Futuro</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Fonte moderna -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
     <style>
         :root {
             --primary: #B22222; /* Vermelho automotivo */
@@ -11,14 +15,19 @@
             --text: #222;
         }
 
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
-            font-family: 'Segoe UI', sans-serif;
+            font-family: 'Poppins', sans-serif;
             background-color: var(--bg);
             color: var(--text);
             position: relative;
         }
 
+        /* Imagem de fundo funcional */
         body::before {
             content: "";
             position: fixed;
@@ -26,10 +35,11 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('https://images.unsplash.com/photo-1609940425600-ef848a1e0c1c?auto=format&fit=crop&w=1600&q=60') no-repeat center center / cover;
+            background-image: url('https://images.unsplash.com/photo-1618081702295-1c69b4e3725a?auto=format&fit=crop&w=1600&q=60');
+            background-size: cover;
+            background-position: center;
             opacity: 0.05;
             z-index: -1;
-            pointer-events: none;
         }
 
         header {
@@ -133,6 +143,20 @@
                 <div class="card">
                     <h3>BYD Dolphin</h3>
                     <p>Compacto, eficiente e acessível. Ideal para quem quer entrar no mundo dos elétricos.</p>
+                </div>
+            </a>
+
+            <a href="https://www.hyundai.com/worldwide/en/eco/ioniq5" target="_blank" class="card-link">
+                <div class="card">
+                    <h3>Hyundai Ioniq 5</h3>
+                    <p>Design futurista, interior espaçoso e carregamento ultrarrápido com tecnologia de 800V.</p>
+                </div>
+            </a>
+
+            <a href="https://www.volvocars.com/br/cars/volvo-ex30/" target="_blank" class="card-link">
+                <div class="card">
+                    <h3>Volvo EX30</h3>
+                    <p>O SUV compacto 100% elétrico da Volvo, com foco em sustentabilidade e tecnologia de ponta.</p>
                 </div>
             </a>
 
