@@ -1,171 +1,153 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>Carros Elétricos do Futuro</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bem-vindo à V12 Vibe</title>
 
-    <!-- Fonte moderna -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- Fonte moderna -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
 
-    <style>
-        :root {
-            --primary: #B22222; /* Vermelho automotivo */
-            --bg: #f5f5f5; /* Cinza claro */
-            --text: #222;
-        }
+  <style>
+    :root {
+      --primary: #b22222;
+      --bg: #f0f0f0;
+      --text: #222;
+    }
 
-        * {
-            box-sizing: border-box;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        body {
-            margin: 0;
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            position: relative;
-        }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, #ffffff, #f3f3f3);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
 
-        /* Imagem de fundo funcional */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('https://images.unsplash.com/photo-1618081702295-1c69b4e3725a?auto=format&fit=crop&w=1600&q=60');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.05;
-            z-index: -1;
-        }
+    header {
+      background-color: var(--primary);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
 
-        header {
-            background-color: var(--primary);
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-        }
+    header h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
 
-        header h1 {
-            margin: 0;
-            font-size: 2.8em;
-        }
+    header p {
+      font-size: 1.2em;
+      opacity: 0.9;
+    }
 
-        header p {
-            margin-top: 10px;
-            font-size: 1.3em;
-            font-weight: 300;
-        }
+    main {
+      flex: 1;
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
 
-        .container {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
+    .intro {
+      text-align: center;
+      margin-bottom: 50px;
+    }
 
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
+    .intro h2 {
+      font-size: 2em;
+      color: var(--primary);
+    }
 
-        .card-link {
-            text-decoration: none;
-            color: inherit;
-            display: block;
-            transition: transform 0.3s ease;
-        }
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
 
-        .card {
-            background: #ffffffcc;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            backdrop-filter: blur(4px);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+    .category-card {
+      background: white;
+      border-radius: 12px;
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-decoration: none;
+      color: inherit;
+    }
 
-        .card-link:hover .card {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-        }
+    .category-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    }
 
-        .card h3 {
-            margin-top: 0;
-            color: var(--primary);
-        }
+    .category-card h3 {
+      margin-bottom: 10px;
+      font-size: 1.3em;
+      color: var(--primary);
+    }
 
-        footer {
-            background-color: #ccc;
-            text-align: center;
-            padding: 20px;
-            font-size: 0.9em;
-            margin-top: 60px;
-        }
-    </style>
+    .category-card p {
+      font-size: 0.95em;
+      opacity: 0.8;
+    }
+
+    footer {
+      text-align: center;
+      background-color: #ddd;
+      padding: 20px;
+      font-size: 0.9em;
+      margin-top: 60px;
+    }
+  </style>
 </head>
 <body>
 
-    <header>
-        <h1>Carros Elétricos do Futuro</h1>
-        <p>Inovação, sustentabilidade e alta performance</p>
-    </header>
+  <header>
+    <h1>Bem-vindo à V12 Vibe</h1>
+    <p>Descubra o futuro da mobilidade com estilo e inovação</p>
+  </header>
 
-    <div class="container">
-        <h2>Modelos em Destaque</h2>
-        <div class="cards">
-
-            <a href="https://www.tesla.com/models" target="_blank" class="card-link">
-                <div class="card">
-                    <h3>Tesla Model S</h3>
-                    <p>Autonomia de até 652 km por carga e aceleração de 0 a 100 km/h em apenas 2,1 segundos.</p>
-                </div>
-            </a>
-
-            <a href="https://www.lucidmotors.com/air" target="_blank" class="card-link">
-                <div class="card">
-                    <h3>Lucid Air</h3>
-                    <p>Design luxuoso e bateria de longa duração, com mais de 800 km de autonomia.</p>
-                </div>
-            </a>
-
-            <a href="https://www.porsche.com/international/models/taycan/" target="_blank" class="card-link">
-                <div class="card">
-                    <h3>Porsche Taycan</h3>
-                    <p>Combina esportividade com tecnologia elétrica de ponta. Recarga ultrarrápida disponível.</p>
-                </div>
-            </a>
-
-            <a href="https://www.byd.com/br/car/dolphin" target="_blank" class="card-link">
-                <div class="card">
-                    <h3>BYD Dolphin</h3>
-                    <p>Compacto, eficiente e acessível. Ideal para quem quer entrar no mundo dos elétricos.</p>
-                </div>
-            </a>
-
-            <a href="https://www.hyundai.com/worldwide/en/eco/ioniq5" target="_blank" class="card-link">
-                <div class="card">
-                    <h3>Hyundai Ioniq 5</h3>
-                    <p>Design futurista, interior espaçoso e carregamento ultrarrápido com tecnologia de 800V.</p>
-                </div>
-            </a>
-
-            <a href="https://www.volvocars.com/br/cars/volvo-ex30/" target="_blank" class="card-link">
-                <div class="card">
-                    <h3>Volvo EX30</h3>
-                    <p>O SUV compacto 100% elétrico da Volvo, com foco em sustentabilidade e tecnologia de ponta.</p>
-                </div>
-            </a>
-
-        </div>
+  <main>
+    <div class="intro">
+      <h2>Escolha o tipo de carro ideal para você</h2>
+      <p>Explore as categorias abaixo e encontre seu próximo veículo</p>
     </div>
 
-    <footer>
-        &copy; 2025 V12 Vibe. Desenvolvido para um futuro mais limpo e veloz.
-    </footer>
+    <div class="categories">
+
+      <a href="modelos-eletricos.html" class="category-card">
+        <h3>Modelos Elétricos ⚡</h3>
+        <p>Sustentabilidade, autonomia e inovação em um só lugar</p>
+      </a>
+
+      <a href="esportivos.html" class="category-card">
+        <h3>Modelos Esportivos 🏎️</h3>
+        <p>Alta performance e adrenalina para os apaixonados por velocidade</p>
+      </a>
+
+      <a href="familia.html" class="category-card">
+        <h3>Modelos para a Família 👨‍👩‍👧‍👦</h3>
+        <p>Conforto, segurança e espaço para toda a família</p>
+      </a>
+
+      <a href="dia-a-dia.html" class="category-card">
+        <h3>Modelos para o Dia a Dia 🚗</h3>
+        <p>Eficiência, economia e praticidade para a rotina</p>
+      </a>
+
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 V12 Vibe. Direção ao futuro com estilo.
+  </footer>
 
 </body>
 </html>
