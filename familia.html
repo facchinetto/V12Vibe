@@ -1,27 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>V12 Vibe - Modelos para a Família</title>
 
-<header>
+  <!-- Fonte moderna -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --primary: #c00000;
+      --secondary: #2f2f2f;
+      --light-gray: #e8e8e8;
+      --accent: #ff4444;
+      --text: #1a1a1a;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: linear-gradient(
+          rgba(0, 0, 0, 0.5),
+          rgba(0, 0, 0, 0.7)
+        ),
+        url("c9e90924-fa31-481e-b0a2-04d7341e78c4.png") center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    header h1 {
+      font-size: 3em;
+      font-weight: 700;
+      margin-bottom: 15px;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      font-size: 1.2em;
+      font-weight: 300;
+      opacity: 0.9;
+    }
+
+    main {
+      flex: 1;
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .intro {
+      text-align: center;
+      color: white;
+      margin-bottom: 50px;
+    }
+
+    .intro h2 {
+      font-size: 2em;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .intro p {
+      font-size: 1.1em;
+      opacity: 0.9;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 35px;
+      margin-top: 40px;
+    }
+
+    .card-link {
+      text-decoration: none;
+    }
+
+    .card {
+      background: white;
+      border-radius: 14px;
+      padding: 35px 25px;
+      text-align: center;
+      color: var(--text);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .card h3 {
+      margin-bottom: 12px;
+      font-size: 1.3em;
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .card p {
+      font-size: 0.95em;
+      opacity: 0.85;
+      margin-bottom: 15px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 8px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      color: white;
+      font-weight: 500;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: linear-gradient(90deg, var(--accent), var(--secondary));
+    }
+
+    footer {
+      text-align: center;
+      background: linear-gradient(to right, var(--secondary), var(--primary));
+      color: white;
+      padding: 25px;
+      font-size: 0.95em;
+      letter-spacing: 0.5px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
     <h1>Modelos para a Família</h1>
     <p>Espaço, conforto e segurança para todos a bordo</p>
-</header>
+  </header>
 
-<!-- Dentro do .cards, exemplos: -->
-<a href="#" class="card-link">
-    <div class="card">
-        <h3>Chevrolet Spin</h3>
-        <p>7 lugares, amplo porta-malas e ótimo custo-benefício.</p>
+  <main>
+    <div class="intro">
+      <h2>Escolha o modelo ideal</h2>
+      <p>Perfeito para viagens, aventuras e o dia a dia da sua família.</p>
     </div>
-</a>
 
-<a href="#" class="card-link">
-    <div class="card">
-        <h3>Volkswagen Tiguan Allspace</h3>
-        <p>Motor potente, design sofisticado e espaço de sobra.</p>
-    </div>
-</a>
+    <div class="cards">
 
-<a href="https://www.honda.com.br/automoveis/crv" class="card-link">
-    <div class="card">
-        <h3>Honda CR-V Híbrido</h3>
-        <p>Eficiência com conforto e tecnologia para a família moderna.</p>
-    </div>
-</a>
+      <a href="#" class="card-link">
+        <div class="card">
+          <h3>Chevrolet Spin</h3>
+          <p>7
