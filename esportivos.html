@@ -12,44 +12,23 @@
 
   <style>
     :root{
-      --primary: #c00000;      /* vermelho metálico */
-      --secondary: #2f2f2f;    /* cinza aço */
-      --accent: #ff4444;       /* destaque */
+      --primary: #c00000;
+      --secondary: #2f2f2f;
       --bg: linear-gradient(135deg,var(--primary),var(--secondary));
       --text-dark: #111;
       --muted: rgba(255,255,255,0.85);
     }
 
-    /* Reset mínimo */
     *{box-sizing:border-box;margin:0;padding:0}
     html,body{height:100%}
     body{
       font-family:'Poppins',sans-serif;
       background: var(--bg);
       color:var(--text-dark);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
       display:flex;
       flex-direction:column;
       min-height:100vh;
     }
-
-    /* Skip link (acessibilidade) */
-    .skip-link{
-      position:absolute;
-      top:8px;
-      left:8px;
-      background:#000;
-      color:#fff;
-      padding:8px 12px;
-      border-radius:6px;
-      text-decoration:none;
-      transform:translateY(-120%);
-      transition:transform .18s ease;
-      z-index:1000;
-      font-size:14px;
-    }
-    .skip-link:focus{transform:translateY(0) }
 
     header{
       position:relative;
@@ -57,33 +36,26 @@
       text-align:center;
       padding:64px 20px;
       background:
-        linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.65) 100%),
+        linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.65)),
         url("c9e90924-fa31-481e-b0a2-04d7341e78c4.png") center/cover no-repeat;
       box-shadow:0 6px 20px rgba(0,0,0,0.35);
     }
-    header .brand{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:14px;
-      margin-bottom:14px;
-    }
-    /* Logo texto estilizado simples */
+
     .logo{
       font-weight:700;
       font-size:28px;
-      letter-spacing:1px;
       background: linear-gradient(90deg, var(--primary), var(--secondary));
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
     }
+
     header h1{
       font-size:34px;
-      line-height:1;
-      margin-bottom:8px;
+      margin-top:10px;
       text-transform:uppercase;
     }
+
     header p{
       font-size:16px;
       opacity:0.95;
@@ -94,6 +66,7 @@
     nav{
       margin-top:16px;
     }
+
     nav a{
       color:var(--muted);
       text-decoration:none;
@@ -101,12 +74,12 @@
       font-weight:500;
       font-size:14px;
     }
+
     nav a:hover{color:#fff}
 
     main{
       flex:1;
       max-width:1100px;
-      width:100%;
       margin:40px auto;
       padding:0 20px 60px;
     }
@@ -117,7 +90,6 @@
       margin-bottom:26px;
       text-transform:uppercase;
       font-size:20px;
-      letter-spacing:1px;
       font-weight:600;
     }
 
@@ -138,6 +110,7 @@
       min-height:150px;
       transition:transform .22s ease, box-shadow .22s ease;
     }
+
     .card:hover{
       transform:translateY(-8px);
       box-shadow: 0 20px 40px rgba(0,0,0,0.25);
@@ -149,6 +122,7 @@
       font-size:18px;
       font-weight:700;
     }
+
     .card p{
       color:#333;
       font-size:15px;
@@ -156,15 +130,8 @@
       margin-bottom:14px;
     }
 
-    .card-footer{
-      display:flex;
-      gap:12px;
-      align-items:center;
-      justify-content:space-between;
-    }
-
     .btn{
-      display:inline-block;
+      align-self:flex-start;
       padding:10px 14px;
       border-radius:8px;
       text-decoration:none;
@@ -172,21 +139,12 @@
       font-size:14px;
       color:white;
       background:linear-gradient(90deg,var(--primary),var(--secondary));
-      transition:filter .12s ease, transform .12s ease;
+      transition:transform .12s ease, box-shadow .12s ease;
       box-shadow: 0 6px 16px rgba(0,0,0,0.18);
     }
-    .btn:active{transform:translateY(1px)}
-    .btn.secondary{
-      background:transparent;
-      color:var(--secondary);
-      border-radius:8px;
-      padding:8px 12px;
-      border:1px solid rgba(0,0,0,0.06);
-      font-weight:500;
-      box-shadow:none;
-    }
 
-    /* Footer */
+    .btn:hover{transform:translateY(-2px)}
+
     footer{
       margin-top:auto;
       background:linear-gradient(90deg,var(--secondary),var(--primary));
@@ -194,10 +152,8 @@
       text-align:center;
       padding:22px 16px;
       font-size:14px;
-      letter-spacing:0.3px;
     }
 
-    /* Responsividade */
     @media (max-width:640px){
       header{padding:48px 16px}
       header h1{font-size:26px}
@@ -206,17 +162,13 @@
   </style>
 </head>
 <body>
-  <a class="skip-link" href="#main-content">Pular para o conteúdo</a>
 
-  <header role="banner" aria-hidden="false">
-    <div class="brand" aria-hidden="true">
-      <div class="logo">V12 Vibe</div>
-    </div>
-
+  <header>
+    <div class="logo">V12 Vibe</div>
     <h1>Modelos Esportivos</h1>
     <p>Alta performance e emoção em cada curva</p>
 
-    <nav role="navigation" aria-label="Navegação principal">
+    <nav>
       <a href="index.html">Home</a>
       <a href="eletricos.html">Elétricos</a>
       <a href="familia.html">Família</a>
@@ -224,50 +176,33 @@
     </nav>
   </header>
 
-  <main id="main-content" role="main">
+  <main>
     <h2 class="page-title">Destaques — Velocidade & Tecnologia</h2>
 
-    <section class="cards" aria-label="Lista de modelos esportivos">
-      <!-- Card 1 -->
-      <article class="card" aria-labelledby="sf90-title">
-        <div>
-          <h3 id="sf90-title">Ferrari SF90 Stradale</h3>
-          <p>Híbrido plug-in com ~1000 cv. Resultado: acelerações extremas sem perder refinamento dinâmico.</p>
-        </div>
-        <div class="card-footer">
-          <a class="btn" href="#" aria-label="Ver detalhes Ferrari SF90">Ver detalhes</a>
-          <a class="btn secondary" href="#" aria-label="Comparar Ferrari SF90">Comparar</a>
-        </div>
-      </article>
+    <div class="cards">
+      <div class="card">
+        <h3>Ferrari SF90 Stradale</h3>
+        <p>Híbrido plug-in com 1000 cv. A fusão perfeita entre potência e inovação.</p>
+        <a class="btn" href="https://www.ferrari.com/en-BR/auto/sf90-stradale" target="_blank" rel="noopener noreferrer">Ver detalhes</a>
+      </div>
 
-      <!-- Card 2 -->
-      <article class="card" aria-labelledby="revuelto-title">
-        <div>
-          <h3 id="revuelto-title">Lamborghini Revuelto</h3>
-          <p>Híbrido com V12 e mais de 1000 cv — engenharia focada em resposta instantânea e som icônico.</p>
-        </div>
-        <div class="card-footer">
-          <a class="btn" href="#" aria-label="Ver detalhes Lamborghini Revuelto">Ver detalhes</a>
-          <a class="btn secondary" href="#" aria-label="Comparar Lamborghini Revuelto">Comparar</a>
-        </div>
-      </article>
+      <div class="card">
+        <h3>Lamborghini Revuelto</h3>
+        <p>Primeiro híbrido da marca italiana com motor V12 e 1015 cv.</p>
+        <a class="btn" href="https://www.lamborghini.com/en-en/models/revuelto" target="_blank" rel="noopener noreferrer">Ver detalhes</a>
+      </div>
 
-      <!-- Card 3 -->
-      <article class="card" aria-labelledby="i8-title">
-        <div>
-          <h3 id="i8-title">BMW i8 Roadster</h3>
-          <p>Design futurista e propulsão híbrida — esportividade com eficiência para quem busca inovação estética.</p>
-        </div>
-        <div class="card-footer">
-          <a class="btn" href="#" aria-label="Ver detalhes BMW i8">Ver detalhes</a>
-          <a class="btn secondary" href="#" aria-label="Comparar BMW i8">Comparar</a>
-        </div>
-      </article>
-    </section>
+      <div class="card">
+        <h3>BMW i8 Roadster</h3>
+        <p>Design futurista e propulsão híbrida. Um esportivo para o século XXI.</p>
+        <a class="btn" href="https://www.bmw.com/en/bmw-models/bmw-i8-roadster.html" target="_blank" rel="noopener noreferrer">Ver detalhes</a>
+      </div>
+    </div>
   </main>
 
-  <footer role="contentinfo">
+  <footer>
     &copy; 2025 V12 Vibe — Paixão por velocidade com responsabilidade.
   </footer>
+
 </body>
 </html>
