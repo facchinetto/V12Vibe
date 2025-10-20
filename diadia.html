@@ -1,34 +1,234 @@
-.category-card {
-  background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  overflow: hidden;
-  transition: transform 0.3s ease;
-  display: flex;
-  flex-direction: column;
-}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>V12 Vibe - Potência e Inovação</title>
 
-.category-card:hover {
-  transform: translateY(-8px);
-}
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
 
-.category-card img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-}
+  <style>
+    :root {
+      --primary: #c00000;
+      --secondary: #2f2f2f;
+      --light-gray: #e8e8e8;
+      --accent: #ff4444;
+      --text: #1a1a1a;
+    }
 
-.category-card h3 {
-  color: var(--primary);
-  font-size: 1.3em;
-  font-weight: 600;
-  margin: 15px 20px 10px;
-}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-.category-card p {
-  font-size: 0.95em;
-  color: var(--text);
-  margin: 0 20px 20px;
-  line-height: 1.4;
-}
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      position: relative;
+      background: linear-gradient(
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.7)
+      ), url("c9e90924-fa31-481e-b0a2-04d7341e78c4.png") center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    header h1 {
+      font-size: 3em;
+      font-weight: 700;
+      margin-bottom: 15px;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      font-size: 1.2em;
+      font-weight: 300;
+      opacity: 0.9;
+    }
+
+    main {
+      flex: 1;
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .intro {
+      text-align: center;
+      color: white;
+      margin-bottom: 50px;
+    }
+
+    .intro h2 {
+      font-size: 2em;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .intro p {
+      font-size: 1.1em;
+      opacity: 0.9;
+    }
+
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 35px;
+      margin-top: 40px;
+    }
+
+    .category-card {
+      background: white;
+      border-radius: 14px;
+      padding: 0 0 25px;
+      text-align: center;
+      text-decoration: none;
+      color: var(--text);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s, box-shadow 0.3s;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .category-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .category-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .category-card h3 {
+      margin: 15px 20px 10px;
+      font-size: 1.3em;
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .category-card p {
+      font-size: 0.95em;
+      color: var(--text);
+      margin: 0 20px 15px;
+      line-height: 1.4;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: auto;
+      align-self: center;
+      padding: 10px 20px;
+      border-radius: 8px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      color: white;
+      font-weight: 500;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: linear-gradient(90deg, var(--accent), var(--secondary));
+    }
+
+    footer {
+      text-align: center;
+      background: linear-gradient(to right, var(--secondary), var(--primary));
+      color: white;
+      padding: 25px;
+      font-size: 0.95em;
+      letter-spacing: 0.5px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>V12 Vibe</h1>
+    <p>Potência, estilo e inovação em cada curva</p>
+  </header>
+
+  <main>
+    <div class="intro">
+      <h2>Escolha seu próximo carro</h2>
+      <p>Explore as categorias e descubra o poder da mobilidade moderna</p>
+    </div>
+
+    <!-- Categorias principais -->
+    <div class="categories">
+      <a href="eletricos.html" class="category-card">
+        <h3>Elétricos</h3>
+        <p>Sustentabilidade e tecnologia sem abrir mão da performance.</p>
+        <span class="btn">Ver modelos</span>
+      </a>
+
+      <a href="esportivos.html" class="category-card">
+        <h3>Esportivos</h3>
+        <p>Velocidade e emoção com design e engenharia de ponta.</p>
+        <span class="btn">Ver modelos</span>
+      </a>
+
+      <a href="familia.html" class="category-card">
+        <h3>Família</h3>
+        <p>Espaço, conforto e segurança para todas as viagens.</p>
+        <span class="btn">Ver modelos</span>
+      </a>
+    </div>
+
+    <!-- Subcategoria: Dia a Dia -->
+    <div class="intro" style="margin-top: 80px;">
+      <h2>Carros para o Dia a Dia</h2>
+      <p>Praticidade, economia e estilo pensados para sua rotina urbana</p>
+    </div>
+
+    <div class="categories">
+      <div class="category-card">
+        <img src="vibe-compact.jpg" alt="Vibe Compact" />
+        <h3>Vibe Compact</h3>
+        <p>Compacto, moderno e ágil. Ideal para estacionar com facilidade e vencer o trânsito da cidade.</p>
+        <a href="#" class="btn">Ver detalhes</a>
+      </div>
+
+      <div class="category-card">
+        <img src="vibe-ecosmart.jpg" alt="Vibe EcoSmart" />
+        <h3>Vibe EcoSmart</h3>
+        <p>Motor híbrido, baixo consumo e visual arrojado. Um equilíbrio perfeito entre economia e presença.</p>
+        <a href="#" class="btn">Ver detalhes</a>
+      </div>
+
+      <div class="category-card">
+        <img src="vibe-urbanx.jpg" alt="Vibe Urban X" />
+        <h3>Vibe Urban X</h3>
+        <p>Conectividade total, design futurista e comandos intuitivos. O carro urbano do amanhã, hoje.</p>
+        <a href="#" class="btn">Ver detalhes</a>
+      </div>
+
+      <div class="category-card">
+        <img src="vibe-dailydrive.jpg" alt="Vibe DailyDrive" />
+        <h3>Vibe DailyDrive</h3>
+        <p>Conforto premium com tecnologia embarcada para facilitar sua rotina. Feito para quem vive em movimento.</p>
+        <a href="#" class="btn">Ver detalhes</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 V12 Vibe — Direção ao futuro com potência e estilo.
+  </footer>
+
+</body>
+</html>
 
