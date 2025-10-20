@@ -1,26 +1,212 @@
-<header>
-    <h1>Modelos para o Dia a Dia</h1>
-    <p>Praticidade, economia e estilo urbano para sua rotina</p>
-</header>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>V12 Vibe - Dia a Dia</title>
 
-<!-- Cards de exemplo -->
-<a href="#" class="card-link">
-    <div class="card">
-        <h3>Fiat Argo</h3>
-        <p>Compacto, econômico e pronto para o trânsito urbano.</p>
-    </div>
-</a>
+  <!-- Fonte moderna -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
 
-<a href="#" class="card-link">
-    <div class="card">
-        <h3>Renault Kwid E-Tech</h3>
-        <p>100% elétrico, pequeno por fora e surpreendente por dentro.</p>
-    </div>
-</a>
+  <style>
+    :root {
+      --primary: #c00000;
+      --secondary: #2f2f2f;
+      --light-gray: #e8e8e8;
+      --accent: #ff4444;
+      --text: #1a1a1a;
+    }
 
-<a href="#" class="card-link">
-    <div class="card">
-        <h3>Chevrolet Onix</h3>
-        <p>Conectividade, economia e excelente custo-benefício.</p>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      position: relative;
+      background: linear-gradient(
+          rgba(0, 0, 0, 0.5),
+          rgba(0, 0, 0, 0.7)
+        ),
+        url("b2c8b2d4-urban-car.jpg") center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    header h1 {
+      font-size: 3em;
+      font-weight: 700;
+      margin-bottom: 15px;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      font-size: 1.2em;
+      font-weight: 300;
+      opacity: 0.9;
+    }
+
+    main {
+      flex: 1;
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .intro {
+      text-align: center;
+      color: white;
+      margin-bottom: 50px;
+    }
+
+    .intro h2 {
+      font-size: 2em;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .intro p {
+      font-size: 1.1em;
+      opacity: 0.9;
+    }
+
+    .models {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 35px;
+      margin-top: 40px;
+    }
+
+    .model-card {
+      background: white;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .model-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .model-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .model-card-content {
+      padding: 25px;
+      text-align: center;
+    }
+
+    .model-card-content h3 {
+      font-size: 1.3em;
+      color: var(--primary);
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .model-card-content p {
+      font-size: 0.95em;
+      opacity: 0.85;
+      margin-bottom: 15px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 8px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      color: white;
+      font-weight: 500;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: linear-gradient(90deg, var(--accent), var(--secondary));
+    }
+
+    footer {
+      text-align: center;
+      background: linear-gradient(to right, var(--secondary), var(--primary));
+      color: white;
+      padding: 25px;
+      font-size: 0.95em;
+      letter-spacing: 0.5px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Dia a Dia</h1>
+    <p>Eficiência e praticidade para acompanhar seu ritmo urbano</p>
+  </header>
+
+  <main>
+    <div class="intro">
+      <h2>Modelos que combinam com sua rotina</h2>
+      <p>Projetados para oferecer conforto, agilidade e economia em cada trajeto.</p>
     </div>
-</a>
+
+    <div class="models">
+      <div class="model-card">
+        <img src="compacto-urbano.jpg" alt="Compacto Urbano" />
+        <div class="model-card-content">
+          <h3>V12 Cityline</h3>
+          <p>Compacto, ágil e com baixo consumo. Ideal para o trânsito das grandes cidades.</p>
+          <a href="#" class="btn">Saiba mais</a>
+        </div>
+      </div>
+
+      <div class="model-card">
+        <img src="hatch-confort.jpg" alt="Hatch Confortável" />
+        <div class="model-card-content">
+          <h3>V12 Comfort</h3>
+          <p>Design moderno e interior inteligente que garantem conforto em cada quilômetro.</p>
+          <a href="#" class="btn">Saiba mais</a>
+        </div>
+      </div>
+
+      <div class="model-card">
+        <img src="hibrido-leve.jpg" alt="Híbrido leve" />
+        <div class="model-card-content">
+          <h3>V12 Hybrid Go</h3>
+          <p>Economia de combustível com potência híbrida — o equilíbrio perfeito para o dia a dia.</p>
+          <a href="#" class="btn">Saiba mais</a>
+        </div>
+      </div>
+
+      <div class="model-card">
+        <img src="suv-compacto.jpg" alt="SUV Compacto" />
+        <div class="model-card-content">
+          <h3>V12 Active</h3>
+          <p>SUV compacto com espírito aventureiro e conforto urbano, pronto para qualquer desafio.</p>
+          <a href="#" class="btn">Saiba mais</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 V12 Vibe — Mobilidade e estilo para o seu dia a dia.
+  </footer>
+
+</body>
+</html>
