@@ -7,9 +7,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #B22222;
-            --bg: #f5f5f5;
-            --text: #222;
+            --primary: #C00000;
+            --secondary: #2F2F2F;
+            --accent: #FF4444;
+            --bg-light: #E8E8E8;
+            --text: #1A1A1A;
         }
 
         * { box-sizing: border-box; }
@@ -17,71 +19,87 @@
         body {
             margin: 0;
             font-family: 'Poppins', sans-serif;
-            background-color: var(--bg);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: var(--text);
         }
 
         header {
-            background-color: var(--primary);
+            background: linear-gradient(135deg, var(--primary), #3B3B3B);
             color: white;
-            padding: 40px 20px;
             text-align: center;
+            padding: 60px 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
 
         header h1 {
             margin: 0;
-            font-size: 2.5em;
+            font-size: 3em;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         header p {
             margin-top: 10px;
-            font-size: 1.2em;
+            font-size: 1.3em;
+            color: #f2f2f2;
         }
 
         .container {
-            max-width: 1000px;
-            margin: 40px auto;
+            max-width: 1100px;
+            margin: 60px auto;
             padding: 0 20px;
+        }
+
+        .container h2 {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            font-size: 2em;
         }
 
         .cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
         }
 
         .card-link {
             text-decoration: none;
             color: inherit;
-            display: block;
-            transition: transform 0.3s ease;
         }
 
         .card {
-            background: #ffffffcc;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            backdrop-filter: blur(4px);
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 16px;
+            padding: 25px;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .card-link:hover .card {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.35);
         }
 
         .card h3 {
             margin-top: 0;
-            color: var(--primary);
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .card p {
+            color: #f0f0f0;
         }
 
         footer {
-            background-color: #ccc;
+            background: linear-gradient(135deg, #3B3B3B, var(--primary));
+            color: white;
             text-align: center;
-            padding: 20px;
-            font-size: 0.9em;
-            margin-top: 60px;
+            padding: 25px;
+            font-size: 0.95em;
+            margin-top: 80px;
+            letter-spacing: 0.5px;
         }
     </style>
 </head>
@@ -121,7 +139,7 @@
 </div>
 
 <footer>
-    &copy; 2025 V12 Vibe. Paixão por velocidade com responsabilidade.
+    &copy; 2025 V12 Vibe — Paixão por velocidade com responsabilidade.
 </footer>
 
 </body>
