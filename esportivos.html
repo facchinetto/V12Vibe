@@ -1,146 +1,273 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>Modelos Esportivos | V12 Vibe</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #C00000;
-            --secondary: #2F2F2F;
-            --accent: #FF4444;
-            --bg-light: #E8E8E8;
-            --text: #1A1A1A;
-        }
+  <meta charset="utf-8" />
+  <title>Modelos Esportivos | V12 Vibe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Modelos esportivos da V12 Vibe — alta performance, design e tecnologia.">
+  <link rel="icon" href="favicon.ico" />
 
-        * { box-sizing: border-box; }
+  <!-- Fonte -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
-        body {
-            margin: 0;
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: var(--text);
-        }
+  <style>
+    :root{
+      --primary: #c00000;      /* vermelho metálico */
+      --secondary: #2f2f2f;    /* cinza aço */
+      --accent: #ff4444;       /* destaque */
+      --bg: linear-gradient(135deg,var(--primary),var(--secondary));
+      --text-dark: #111;
+      --muted: rgba(255,255,255,0.85);
+    }
 
-        header {
-            background: linear-gradient(135deg, var(--primary), #3B3B3B);
-            color: white;
-            text-align: center;
-            padding: 60px 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        }
+    /* Reset mínimo */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family:'Poppins',sans-serif;
+      background: var(--bg);
+      color:var(--text-dark);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      display:flex;
+      flex-direction:column;
+      min-height:100vh;
+    }
 
-        header h1 {
-            margin: 0;
-            font-size: 3em;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
+    /* Skip link (acessibilidade) */
+    .skip-link{
+      position:absolute;
+      top:8px;
+      left:8px;
+      background:#000;
+      color:#fff;
+      padding:8px 12px;
+      border-radius:6px;
+      text-decoration:none;
+      transform:translateY(-120%);
+      transition:transform .18s ease;
+      z-index:1000;
+      font-size:14px;
+    }
+    .skip-link:focus{transform:translateY(0) }
 
-        header p {
-            margin-top: 10px;
-            font-size: 1.3em;
-            color: #f2f2f2;
-        }
+    header{
+      position:relative;
+      color:white;
+      text-align:center;
+      padding:64px 20px;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.65) 100%),
+        url("c9e90924-fa31-481e-b0a2-04d7341e78c4.png") center/cover no-repeat;
+      box-shadow:0 6px 20px rgba(0,0,0,0.35);
+    }
+    header .brand{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:14px;
+      margin-bottom:14px;
+    }
+    /* Logo texto estilizado simples */
+    .logo{
+      font-weight:700;
+      font-size:28px;
+      letter-spacing:1px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    header h1{
+      font-size:34px;
+      line-height:1;
+      margin-bottom:8px;
+      text-transform:uppercase;
+    }
+    header p{
+      font-size:16px;
+      opacity:0.95;
+      margin-bottom:0;
+      font-weight:300;
+    }
 
-        .container {
-            max-width: 1100px;
-            margin: 60px auto;
-            padding: 0 20px;
-        }
+    nav{
+      margin-top:16px;
+    }
+    nav a{
+      color:var(--muted);
+      text-decoration:none;
+      margin:0 10px;
+      font-weight:500;
+      font-size:14px;
+    }
+    nav a:hover{color:#fff}
 
-        .container h2 {
-            text-align: center;
-            color: white;
-            margin-bottom: 40px;
-            font-size: 2em;
-        }
+    main{
+      flex:1;
+      max-width:1100px;
+      width:100%;
+      margin:40px auto;
+      padding:0 20px 60px;
+    }
 
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
+    .page-title{
+      color:#fff;
+      text-align:center;
+      margin-bottom:26px;
+      text-transform:uppercase;
+      font-size:20px;
+      letter-spacing:1px;
+      font-weight:600;
+    }
 
-        .card-link {
-            text-decoration: none;
-            color: inherit;
-        }
+    .cards{
+      display:grid;
+      gap:22px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
 
-        .card {
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 16px;
-            padding: 25px;
-            backdrop-filter: blur(8px);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.96), rgba(250,250,250,0.95));
+      border-radius:14px;
+      padding:18px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      min-height:150px;
+      transition:transform .22s ease, box-shadow .22s ease;
+    }
+    .card:hover{
+      transform:translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+    }
 
-        .card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.35);
-        }
+    .card h3{
+      margin:0 0 10px 0;
+      color:var(--primary);
+      font-size:18px;
+      font-weight:700;
+    }
+    .card p{
+      color:#333;
+      font-size:15px;
+      line-height:1.5;
+      margin-bottom:14px;
+    }
 
-        .card h3 {
-            margin-top: 0;
-            color: var(--accent);
-            font-weight: 600;
-        }
+    .card-footer{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      justify-content:space-between;
+    }
 
-        .card p {
-            color: #f0f0f0;
-        }
+    .btn{
+      display:inline-block;
+      padding:10px 14px;
+      border-radius:8px;
+      text-decoration:none;
+      font-weight:600;
+      font-size:14px;
+      color:white;
+      background:linear-gradient(90deg,var(--primary),var(--secondary));
+      transition:filter .12s ease, transform .12s ease;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+    }
+    .btn:active{transform:translateY(1px)}
+    .btn.secondary{
+      background:transparent;
+      color:var(--secondary);
+      border-radius:8px;
+      padding:8px 12px;
+      border:1px solid rgba(0,0,0,0.06);
+      font-weight:500;
+      box-shadow:none;
+    }
 
-        footer {
-            background: linear-gradient(135deg, #3B3B3B, var(--primary));
-            color: white;
-            text-align: center;
-            padding: 25px;
-            font-size: 0.95em;
-            margin-top: 80px;
-            letter-spacing: 0.5px;
-        }
-    </style>
+    /* Footer */
+    footer{
+      margin-top:auto;
+      background:linear-gradient(90deg,var(--secondary),var(--primary));
+      color:white;
+      text-align:center;
+      padding:22px 16px;
+      font-size:14px;
+      letter-spacing:0.3px;
+    }
+
+    /* Responsividade */
+    @media (max-width:640px){
+      header{padding:48px 16px}
+      header h1{font-size:26px}
+      .logo{font-size:20px}
+    }
+  </style>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Pular para o conteúdo</a>
 
-<header>
+  <header role="banner" aria-hidden="false">
+    <div class="brand" aria-hidden="true">
+      <div class="logo">V12 Vibe</div>
+    </div>
+
     <h1>Modelos Esportivos</h1>
     <p>Alta performance e emoção em cada curva</p>
-</header>
 
-<div class="container">
-    <h2>Destaques</h2>
-    <div class="cards">
+    <nav role="navigation" aria-label="Navegação principal">
+      <a href="index.html">Home</a>
+      <a href="eletricos.html">Elétricos</a>
+      <a href="familia.html">Família</a>
+      <a href="diadia.html">Dia a Dia</a>
+    </nav>
+  </header>
 
-        <a href="#" class="card-link">
-            <div class="card">
-                <h3>Ferrari SF90 Stradale</h3>
-                <p>Híbrido plug-in com 1000 cv. A fusão perfeita entre potência e inovação.</p>
-            </div>
-        </a>
+  <main id="main-content" role="main">
+    <h2 class="page-title">Destaques — Velocidade & Tecnologia</h2>
 
-        <a href="#" class="card-link">
-            <div class="card">
-                <h3>Lamborghini Revuelto</h3>
-                <p>Primeiro híbrido da marca italiana com motor V12 e 1015 cv.</p>
-            </div>
-        </a>
+    <section class="cards" aria-label="Lista de modelos esportivos">
+      <!-- Card 1 -->
+      <article class="card" aria-labelledby="sf90-title">
+        <div>
+          <h3 id="sf90-title">Ferrari SF90 Stradale</h3>
+          <p>Híbrido plug-in com ~1000 cv. Resultado: acelerações extremas sem perder refinamento dinâmico.</p>
+        </div>
+        <div class="card-footer">
+          <a class="btn" href="#" aria-label="Ver detalhes Ferrari SF90">Ver detalhes</a>
+          <a class="btn secondary" href="#" aria-label="Comparar Ferrari SF90">Comparar</a>
+        </div>
+      </article>
 
-        <a href="#" class="card-link">
-            <div class="card">
-                <h3>BMW i8 Roadster</h3>
-                <p>Design futurista e propulsão híbrida. Um esportivo para o século XXI.</p>
-            </div>
-        </a>
+      <!-- Card 2 -->
+      <article class="card" aria-labelledby="revuelto-title">
+        <div>
+          <h3 id="revuelto-title">Lamborghini Revuelto</h3>
+          <p>Híbrido com V12 e mais de 1000 cv — engenharia focada em resposta instantânea e som icônico.</p>
+        </div>
+        <div class="card-footer">
+          <a class="btn" href="#" aria-label="Ver detalhes Lamborghini Revuelto">Ver detalhes</a>
+          <a class="btn secondary" href="#" aria-label="Comparar Lamborghini Revuelto">Comparar</a>
+        </div>
+      </article>
 
-    </div>
-</div>
+      <!-- Card 3 -->
+      <article class="card" aria-labelledby="i8-title">
+        <div>
+          <h3 id="i8-title">BMW i8 Roadster</h3>
+          <p>Design futurista e propulsão híbrida — esportividade com eficiência para quem busca inovação estética.</p>
+        </div>
+        <div class="card-footer">
+          <a class="btn" href="#" aria-label="Ver detalhes BMW i8">Ver detalhes</a>
+          <a class="btn secondary" href="#" aria-label="Comparar BMW i8">Comparar</a>
+        </div>
+      </article>
+    </section>
+  </main>
 
-<footer>
+  <footer role="contentinfo">
     &copy; 2025 V12 Vibe — Paixão por velocidade com responsabilidade.
-</footer>
-
+  </footer>
 </body>
 </html>
