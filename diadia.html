@@ -11,7 +11,6 @@
     :root {
       --primary: #c00000;
       --secondary: #2f2f2f;
-      --light-gray: #e8e8e8;
       --accent: #ff4444;
       --text: #1a1a1a;
     }
@@ -31,21 +30,49 @@
       flex-direction: column;
     }
 
+    /* === Cabeçalho === */
     header {
       position: relative;
       background: linear-gradient(
         rgba(0, 0, 0, 0.6),
         rgba(0, 0, 0, 0.8)
-      ), url("header-vibe.jpg") center/cover no-repeat;
+      ), url("c9e90924-fa31-481e-b0a2-04d7341e78c4.png") center/cover no-repeat;
       color: white;
       text-align: center;
-      padding: 100px 20px;
+      padding: 100px 20px 60px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    /* === Menu === */
+    nav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 15px 0;
+      backdrop-filter: blur(6px);
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+      transform: scale(1.1);
     }
 
     header h1 {
       font-size: 3em;
       font-weight: 700;
+      margin-top: 80px;
       margin-bottom: 15px;
       letter-spacing: 1px;
     }
@@ -56,6 +83,7 @@
       opacity: 0.9;
     }
 
+    /* === Corpo === */
     main {
       flex: 1;
       padding: 60px 20px;
@@ -150,6 +178,13 @@
 <body>
 
   <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="eletricos.html">Elétricos</a>
+      <a href="familia.html">Família</a>
+      <a href="diadia.html">Dia a Dia</a>
+    </nav>
+
     <h1>V12 Vibe</h1>
     <p>Potência, estilo e inovação em cada curva</p>
   </header>
@@ -193,4 +228,3 @@
 
 </body>
 </html>
-
