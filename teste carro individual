@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Tesla Model S | V12 Vibe</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #0d0d0d;
+            color: #fff;
+        }
+
+        header {
+            background-color: #111;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            border-bottom: 2px solid #e50914;
+        }
+
+        header h1 {
+            color: #e50914;
+            font-size: 28px;
+            margin: 0;
+        }
+
+        header nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        header nav a:hover {
+            color: #e50914;
+        }
+
+        .carro-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 10%;
+            gap: 40px;
+        }
+
+        .carro-imagem {
+            flex: 1 1 400px;
+            text-align: center;
+        }
+
+        .carro-imagem img {
+            width: 100%;
+            max-width: 550px;
+            border-radius: 16px;
+            box-shadow: 0 0 20px rgba(229, 9, 20, 0.5);
+        }
+
+        .carro-info {
+            flex: 1 1 400px;
+            background-color: #181818;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+        }
+
+        .carro-info h2 {
+            color: #e50914;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .descricao {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #ccc;
+            margin-bottom: 25px;
+        }
+
+        .ficha {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .ficha li {
+            padding: 10px 0;
+            border-bottom: 1px solid #333;
+        }
+
+        .ficha li strong {
+            color: #e50914;
+        }
+
+        .botoes {
+            margin-top: 30px;
+        }
+
+        .botao {
+            background-color: #e50914;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+            text-decoration: none;
+        }
+
+        .botao:hover {
+            background-color: #b00610;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background-color: #111;
+            border-top: 2px solid #e50914;
+            color: #888;
+            margin-top: 60px;
+        }
+
+        @media (max-width: 900px) {
+            .carro-container {
+                flex-direction: column;
+                padding: 40px 5%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>V12 Vibe</h1>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="esportivos.html">Esportivos</a>
+            <a href="eletricos.html">Elétricos</a>
+            <a href="contato.html">Contato</a>
+        </nav>
+    </header>
+
+    <section class="carro-container">
+        <div class="carro-imagem">
+            <img src="imagens/tesla-model-s.jpg" alt="Tesla Model S">
+        </div>
+
+        <div class="carro-info">
+            <h2>Tesla Model S</h2>
+            <p class="descricao">
+                O Tesla Model S é o sedã elétrico de alta performance que redefiniu o conceito de velocidade, tecnologia e autonomia.
+                Com um design minimalista e interior futurista, ele combina luxo com o desempenho brutal de um supercarro elétrico.
+            </p>
+
+            <ul class="ficha">
+                <li><strong>Motor:</strong> Elétrico duplo (AWD)</li>
+                <li><strong>Potência:</strong> 1.020 cv</li>
+                <li><strong>Torque:</strong> 1.400 Nm</li>
+                <li><strong>Aceleração (0–100 km/h):</strong> 2,1 segundos</li>
+                <li><strong>Velocidade máxima:</strong> 322 km/h</li>
+                <li><strong>Autonomia:</strong> 600 km</li>
+                <li><strong>Preço:</strong> R$ 1.200.000,00</li>
+            </ul>
+
+            <div class="botoes">
+                <a href="eletricos.html" class="botao">Voltar aos modelos</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        © 2025 V12 Vibe — Todos os direitos reservados
+    </footer>
+
+</body>
+</html>
