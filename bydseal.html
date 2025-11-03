@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>BYD Seal | V12 Vibe</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #0d0d0d;
+    color: #fff;
+}
+
+/* HEADER */
+header {
+    background-color: #111;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    border-bottom: 2px solid #00aaff;
+}
+header h1 {
+    color: #00aaff;
+    font-size: 28px;
+    margin: 0;
+}
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+header nav a:hover {
+    color: #00aaff;
+}
+
+/* CONTEÚDO PRINCIPAL */
+.carro-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 60px 10%;
+    gap: 50px;
+}
+.carro-imagem {
+    flex: 1.6;
+    text-align: center;
+}
+.carro-imagem img {
+    width: 100%;
+    max-width: 850px;
+    border-radius: 18px;
+    box-shadow: 0 0 42px rgba(0, 170, 255, 0.4);
+}
+.carro-info {
+    flex: 0.9;
+    background-color: #181818;
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
+}
+.carro-info h2 {
+    color: #00aaff;
+    font-size: 34px;
+    margin-bottom: 12px;
+}
+.descricao {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #ccc;
+    margin-bottom: 25px;
+}
+.ficha {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.ficha li {
+    padding: 10px 0;
+    border-bottom: 1px solid #333;
+}
+.ficha li strong {
+    color: #00aaff;
+}
+.botao {
+    display: inline-block;
+    margin-top: 30px;
+    background-color: #00aaff;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+.botao:hover {
+    background-color: #007acc;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 25px;
+    background-color: #111;
+    border-top: 2px solid #00aaff;
+    color: #888;
+    margin-top: 60px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 950px) {
+    .carro-container {
+        flex-direction: column;
+        padding: 40px 5%;
+    }
+    .carro-info {
+        width: 100%;
+    }
+    .carro-imagem img {
+        max-width: 95%;
+    }
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>V12 Vibe</h1>
+<nav>
+    <a href="index.html">Início</a>
+    <a href="eletricos.html">Elétricos</a>
+    <a href="esportivos.html">Esportivos</a>
+    <a href="contato.html">Contato</a>
+</nav>
+</header>
+
+<section class="carro-container">
+<div class="carro-imagem">
+<img src="https://cdn.motor1.com/images/mgl/8Z1yK1/s1/byd-seal-2024.jpg" alt="BYD Seal">
+</div>
+
+<div class="carro-info">
+<h2>BYD Seal</h2>
+<p class="descricao">
+O BYD Seal é um sedã elétrico premium que combina desempenho esportivo com sofisticação. Com design inspirado em ondas e tecnologia avançada, o Seal é um dos modelos mais tecnológicos da marca chinesa, competindo diretamente com o Tesla Model 3.
+</p>
+
+<ul class="ficha">
+<li><strong>Motorização:</strong> Elétrico — 313 cv (RWD) / 530 cv (AWD)</li>
+<li><strong>Torque:</strong> 44,8 kgfm (RWD) / 68,3 kgfm (AWD)</li>
+<li><strong>Transmissão:</strong> Automática — 1 marcha</li>
+<li><strong>Tração:</strong> Traseira ou integral (AWD)</li>
+<li><strong>Aceleração (0–100 km/h):</strong> 3,8 s (AWD)</li>
+<li><strong>Velocidade máxima:</strong> 180 km/h</li>
+<li><strong>Autonomia:</strong> até 520 km (ciclo WLTP)</li>
+<li><strong>Bateria:</strong> 82,5 kWh — Blade Battery</li>
+<li><strong>Preço (Brasil):</strong> R$ 296.800</li>
+</ul>
+
+<a href="eletricos.html" class="botao">Voltar aos modelos</a>
+</div>
+</section>
+
+<footer>
+© 2025 V12 Vibe — Todos os direitos reservados
+</footer>
+
+</body>
+</html>
