@@ -45,16 +45,45 @@ header nav a:hover {
     padding: 60px 10%;
     gap: 50px;
 }
-.carro-imagem {
-    flex: 1.5;
-    text-align: center;
-}
-.carro-imagem img {
-    width: 100%;
-    max-width: 800px;
+
+/* CARROSSEL */
+.carousel {
+    position: relative;
+    overflow: hidden;
     border-radius: 18px;
     box-shadow: 0 0 42px rgba(229, 9, 20, 0.4);
+    width: 100%;
+    max-width: 650px;
 }
+.carousel-track {
+    display: flex;
+    transition: transform 0.4s ease-in-out;
+}
+.carousel-track img {
+    min-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+.carousel-button.prev {
+    left: 10px;
+}
+.carousel-button.next {
+    right: 10px;
+}
+
+/* INFORMAÇÕES DO CARRO */
 .carro-info {
     flex: 0.9;
     background-color: #181818;
@@ -120,7 +149,7 @@ footer {
     .carro-info {
         width: 100%;
     }
-    .carro-imagem img {
+    .carousel {
         max-width: 95%;
     }
 }
@@ -139,10 +168,25 @@ footer {
 </header>
 
 <section class="carro-container">
-<div class="carro-imagem">
-<img src="https://cdn.motor1.com/images/mgl/nP4y9W/s1/lamborghini-revuelto.jpg" alt="Lamborghini Revuelto">
+
+<!-- CARROSSEL DE IMAGENS -->
+<div class="carousel">
+    <div class="carousel-track">
+        <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202509/20250909/lamborghini-revuelto-6.5-v12-phev-amt-wmimagem12501472686.jpg?s=fill&w=552&h=414&q=60" alt="Revuelto 1">
+        <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202509/20250909/lamborghini-revuelto-6.5-v12-phev-amt-wmimagem12495791133.jpg?s=fill&w=552&h=414&q=60" alt="Revuelto 2">
+        <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202509/20250909/lamborghini-revuelto-6.5-v12-phev-amt-wmimagem1249311787.jpg?s=fill&w=552&h=414&q=60" alt="Revuelto 3">
+        <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202509/20250909/lamborghini-revuelto-6.5-v12-phev-amt-wmimagem1249222278.jpg?s=fill&w=552&h=414&q=60" alt="Revuelto 4">
+        <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202509/20250909/lamborghini-revuelto-6.5-v12-phev-amt-wmimagem12491999046.jpg?s=fill&w=552&h=414&q=60" alt="Revuelto 5">
+        <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202509/20250909/lamborghini-revuelto-6.5-v12-phev-amt-wmimagem1249195509.jpg?s=fill&w=552&h=414&q=60" alt="Revuelto 6">
+        <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202509/20250909/lamborghini-revuelto-6.5-v12-phev-amt-wmimagem12493103341.jpg?s=fill&w=552&h=414&q=60" alt="Revuelto 7">
+        <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202509/20250909/lamborghini-revuelto-6.5-v12-phev-amt-wmimagem1249214158.jpg?s=fill&w=552&h=414&q=60" alt="Revuelto 8">
+    
+    </div>
+    <button class="carousel-button prev">&#10094;</button>
+    <button class="carousel-button next">&#10095;</button>
 </div>
 
+<!-- INFORMAÇÕES DO CARRO -->
 <div class="carro-info">
 <h2>Lamborghini Revuelto</h2>
 <p class="descricao">
@@ -163,11 +207,34 @@ A Lamborghini Revuelto é o primeiro superesportivo híbrido plug-in da marca it
 
 <a href="esportivos.html" class="botao">Voltar aos modelos</a>
 </div>
+
 </section>
 
 <footer>
 © 2025 V12 Vibe — Todos os direitos reservados
 </footer>
+
+<script>
+const track = document.querySelector('.carousel-track');
+const slides = Array.from(track.children);
+const prevButton = document.querySelector('.carousel-button.prev');
+const nextButton = document.querySelector('.carousel-button.next');
+let currentIndex = 0;
+
+function updateCarousel() {
+    track.style.transform = 'translateX(-' + currentIndex * 100 + '%)';
+}
+
+nextButton.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % slides.length;
+    updateCarousel();
+});
+
+prevButton.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    updateCarousel();
+});
+</script>
 
 </body>
 </html>
