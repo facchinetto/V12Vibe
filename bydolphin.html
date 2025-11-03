@@ -53,34 +53,33 @@ header nav a:hover {
     border-radius: 18px;
     box-shadow: 0 0 42px rgba(229, 9, 20, 0.4);
     width: 100%;
-    max-width: 500px; /* menor que antes */
+    max-width: 650px; /* um pouco maior que antes */
 }
 .carousel-track {
     display: flex;
-    transition: transform 0.5s ease;
+    transition: transform 0.4s ease-in-out;
 }
 .carousel-track img {
     min-width: 100%;
-    height: auto; /* altura proporcional */
-    object-fit: contain; /* mantém proporção */
+    height: auto; /* mantém a proporção */
+    object-fit: contain;
 }
-.carousel button {
+.carousel-button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     background-color: rgba(0,0,0,0.5);
-    color: #fff;
     border: none;
-    font-size: 36px;
+    color: #fff;
+    font-size: 24px;
     padding: 10px;
     cursor: pointer;
     border-radius: 50%;
-    z-index: 10;
 }
-.carousel .prev {
+.carousel-button.prev {
     left: 10px;
 }
-.carousel .next {
+.carousel-button.next {
     right: 10px;
 }
 
@@ -149,10 +148,9 @@ footer {
     }
     .carro-info {
         width: 100%;
-        margin-top: 30px;
     }
     .carousel {
-        max-width: 100%;
+        max-width: 95%;
     }
 }
 </style>
@@ -170,29 +168,28 @@ footer {
 </header>
 
 <section class="carro-container">
-<!-- CARROSSEL -->
+
 <div class="carousel">
     <div class="carousel-track">
         <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202510/20251031/byd-dolphin-449-kw-eletrico-gs-wmimagem05153968539.webp?s=fill&w=552&h=414&q=60" alt="BYD Dolphin 1">
-            <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202510/20251031/byd-dolphin-449-kw-eletrico-gs-wmimagem05153879137.webp?s=fill&w=552&h=414&q=60" alt="BYD Dolphin 2">
-            <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202510/20251031/byd-dolphin-449-kw-eletrico-gs-wmimagem05153923536.webp?s=fill&w=552&h=414&q=60" alt="BYD Dolphin 3">
-            <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202510/20251031/byd-dolphin-449-kw-eletrico-gs-wmimagem05153951212.webp?s=fill&w=552&h=414&q=60" alt="BYD Dolphin 4">
-            <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202510/20251031/byd-dolphin-449-kw-eletrico-gs-wmimagem05153980137.webp?s=fill&w=552&h=414&q=60" alt="BYD Dolphin 5">
-            <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202510/20251031/byd-dolphin-449-kw-eletrico-gs-wmimagem05153994328.webp?s=fill&w=552&h=414&q=60" alt="BYD Dolphin 6">
-            <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202510/20251031/byd-dolphin-449-kw-eletrico-gs-wmimagem05154008017.webp?s=fill&w=552&h=414&q=60" alt="BYD Dolphin 7">
-            <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202510/20251031/byd-dolphin-449-kw-eletrico-gs-wmimagem05154039116.webp?s=fill&w=552&h=414&q=60" alt="BYD Dolphin 8">
-            <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202510/20251031/byd-dolphin-449-kw-eletrico-gs-wmimagem05154064419.webp?s=fill&w=552&h=414&q=60"BYD Dolphin 9">
-            <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202510/20251031/byd-dolphin-449-kw-eletrico-gs-wmimagem05154102012.webp?s=fill&w=552&h=414&q=60" alt="BYD Dolphin 10">
+        <img src="https://www.byd.com.br/uploads/1/1/0/5/110512085/byd-dolphin-2.jpg" alt="BYD Dolphin 2">
+        <img src="https://www.byd.com.br/uploads/1/1/0/5/110512085/byd-dolphin-3.jpg" alt="BYD Dolphin 3">
+        <img src="https://www.byd.com.br/uploads/1/1/0/5/110512085/byd-dolphin-4.jpg" alt="BYD Dolphin 4">
+        <img src="https://www.byd.com.br/uploads/1/1/0/5/110512085/byd-dolphin-5.jpg" alt="BYD Dolphin 5">
+        <img src="https://www.byd.com.br/uploads/1/1/0/5/110512085/byd-dolphin-6.jpg" alt="BYD Dolphin 6">
+        <img src="https://www.byd.com.br/uploads/1/1/0/5/110512085/byd-dolphin-7.jpg" alt="BYD Dolphin 7">
+        <img src="https://www.byd.com.br/uploads/1/1/0/5/110512085/byd-dolphin-8.jpg" alt="BYD Dolphin 8">
+        <img src="https://www.byd.com.br/uploads/1/1/0/5/110512085/byd-dolphin-9.jpg" alt="BYD Dolphin 9">
+        <img src="https://www.byd.com.br/uploads/1/1/0/5/110512085/byd-dolphin-10.jpg" alt="BYD Dolphin 10">
     </div>
-    <button class="prev">&#10094;</button>
-    <button class="next">&#10095;</button>
+    <button class="carousel-button prev">&#10094;</button>
+    <button class="carousel-button next">&#10095;</button>
 </div>
 
-<!-- INFORMAÇÕES DO CARRO -->
 <div class="carro-info">
 <h2>BYD Dolphin</h2>
 <p class="descricao">
-O BYD Dolphin combina tecnologia de ponta, conforto e eficiência em um design futurista e compacto. Seu motor elétrico potente e a bateria Blade oferecem excelente autonomia com segurança e confiabilidade.
+O BYD Dolphin combina tecnologia, conforto e eficiência em um design compacto e futurista. Seu motor elétrico potente e a bateria Blade oferecem excelente autonomia com segurança e confiabilidade.
 </p>
 
 <ul class="ficha">
@@ -215,13 +212,12 @@ O BYD Dolphin combina tecnologia de ponta, conforto e eficiência em um design f
 <script>
 const track = document.querySelector('.carousel-track');
 const slides = Array.from(track.children);
-const prevButton = document.querySelector('.prev');
-const nextButton = document.querySelector('.next');
+const prevButton = document.querySelector('.carousel-button.prev');
+const nextButton = document.querySelector('.carousel-button.next');
 let currentIndex = 0;
 
 function updateCarousel() {
-    const slideWidth = slides[0].getBoundingClientRect().width;
-    track.style.transform = `translateX(-${slideWidth * currentIndex}px)`;
+    track.style.transform = 'translateX(-' + currentIndex * 100 + '%)';
 }
 
 nextButton.addEventListener('click', () => {
@@ -233,8 +229,6 @@ prevButton.addEventListener('click', () => {
     currentIndex = (currentIndex - 1 + slides.length) % slides.length;
     updateCarousel();
 });
-
-window.addEventListener('resize', updateCarousel);
 </script>
 
 </body>
