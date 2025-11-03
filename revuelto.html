@@ -11,8 +11,6 @@ body {
     background-color: #0d0d0d;
     color: #fff;
 }
-
-/* HEADER */
 header {
     background-color: #111;
     display: flex;
@@ -33,11 +31,8 @@ header nav a {
     font-size: 16px;
     transition: color 0.3s;
 }
-header nav a:hover {
-    color: #e50914;
-}
+header nav a:hover { color: #e50914; }
 
-/* CONTEÚDO PRINCIPAL */
 .carro-container {
     display: flex;
     justify-content: space-between;
@@ -45,113 +40,32 @@ header nav a:hover {
     padding: 60px 10%;
     gap: 50px;
 }
-
-/* CARROSSEL */
-.carousel {
-    position: relative;
-    overflow: hidden;
+.carro-imagem { flex: 1.3; text-align: center; }
+.carro-imagem img {
+    width: 100%;
+    max-width: 600px;
     border-radius: 18px;
     box-shadow: 0 0 42px rgba(229, 9, 20, 0.4);
-    width: 100%;
-    max-width: 650px;
 }
-.carousel-track {
-    display: flex;
-    transition: transform 0.4s ease-in-out;
-}
-.carousel-track img {
-    min-width: 100%;
-    height: auto;
-    object-fit: contain;
-}
-.carousel-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0,0,0,0.5);
-    border: none;
-    color: #fff;
-    font-size: 24px;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 50%;
-}
-.carousel-button.prev {
-    left: 10px;
-}
-.carousel-button.next {
-    right: 10px;
-}
-
-/* INFORMAÇÕES DO CARRO */
 .carro-info {
     flex: 0.9;
     background-color: #181818;
     padding: 35px;
     border-radius: 16px;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 25px rgba(0,0,0,0.8);
 }
-.carro-info h2 {
-    color: #e50914;
-    font-size: 34px;
-    margin-bottom: 12px;
-}
-.descricao {
-    font-size: 15px;
-    line-height: 1.6;
-    color: #ccc;
-    margin-bottom: 25px;
-}
-.ficha {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-.ficha li {
-    padding: 10px 0;
-    border-bottom: 1px solid #333;
-}
-.ficha li strong {
-    color: #e50914;
-}
-.botao {
-    display: inline-block;
-    margin-top: 30px;
-    background-color: #e50914;
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    font-size: 16px;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: background 0.3s;
-}
-.botao:hover {
-    background-color: #b00610;
-}
-
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 25px;
-    background-color: #111;
-    border-top: 2px solid #e50914;
-    color: #888;
-    margin-top: 60px;
-}
-
-/* RESPONSIVO */
+.carro-info h2 { color: #e50914; font-size: 34px; margin-bottom: 12px; }
+.descricao { font-size: 15px; line-height: 1.6; color: #ccc; margin-bottom: 25px; }
+.ficha { list-style: none; padding: 0; margin: 0; }
+.ficha li { padding: 10px 0; border-bottom: 1px solid #333; }
+.ficha li strong { color: #e50914; }
+.botao { display: inline-block; margin-top: 30px; background-color: #e50914; color: white; border: none; padding: 12px 25px; font-size: 16px; border-radius: 8px; text-decoration: none; transition: background 0.3s; }
+.botao:hover { background-color: #b00610; }
+footer { text-align: center; padding: 25px; background-color: #111; border-top: 2px solid #e50914; color: #888; margin-top: 60px; }
 @media (max-width: 950px) {
-    .carro-container {
-        flex-direction: column;
-        padding: 40px 5%;
-    }
-    .carro-info {
-        width: 100%;
-    }
-    .carousel {
-        max-width: 95%;
-    }
+    .carro-container { flex-direction: column; padding: 40px 5%; }
+    .carro-info { width: 100%; }
+    .carro-imagem img { max-width: 90%; }
 }
 </style>
 </head>
@@ -168,73 +82,32 @@ footer {
 </header>
 
 <section class="carro-container">
-
-<!-- CARROSSEL DE IMAGENS -->
-<div class="carousel">
-    <div class="carousel-track">
-        <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202509/20250909/lamborghini-revuelto-6.5-v12-phev-amt-wmimagem12501472686.jpg?s=fill&w=552&h=414&q=60" alt="Revuelto 1">
-        <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202509/20250909/lamborghini-revuelto-6.5-v12-phev-amt-wmimagem12495791133.jpg?s=fill&w=552&h=414&q=60" alt="Revuelto 2">
-        <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202509/20250909/lamborghini-revuelto-6.5-v12-phev-amt-wmimagem1249311787.jpg?s=fill&w=552&h=414&q=60" alt="Revuelto 3">
-        <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202509/20250909/lamborghini-revuelto-6.5-v12-phev-amt-wmimagem1249222278.jpg?s=fill&w=552&h=414&q=60" alt="Revuelto 4">
-        <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202509/20250909/lamborghini-revuelto-6.5-v12-phev-amt-wmimagem12491999046.jpg?s=fill&w=552&h=414&q=60" alt="Revuelto 5">
-        <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202509/20250909/lamborghini-revuelto-6.5-v12-phev-amt-wmimagem1249195509.jpg?s=fill&w=552&h=414&q=60" alt="Revuelto 6">
-        <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202509/20250909/lamborghini-revuelto-6.5-v12-phev-amt-wmimagem12493103341.jpg?s=fill&w=552&h=414&q=60" alt="Revuelto 7">
-        <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202509/20250909/lamborghini-revuelto-6.5-v12-phev-amt-wmimagem1249214158.jpg?s=fill&w=552&h=414&q=60" alt="Revuelto 8">
-    
-    </div>
-    <button class="carousel-button prev">&#10094;</button>
-    <button class="carousel-button next">&#10095;</button>
+<div class="carro-imagem">
+<img src="https://cdn.motor1.com/images/mgl/0AN0r/s1/lamborghini-revuelto-2024.jpg" alt="Lamborghini Revuelto">
 </div>
 
-<!-- INFORMAÇÕES DO CARRO -->
 <div class="carro-info">
 <h2>Lamborghini Revuelto</h2>
 <p class="descricao">
-A Lamborghini Revuelto é o primeiro superesportivo híbrido plug-in da marca italiana, combinando um motor V12 naturalmente aspirado com três motores elétricos. O resultado é uma obra de engenharia com desempenho brutal e design futurista, representando a nova era da Lamborghini.
+O Lamborghini Revuelto é um hipercarro híbrido com motor V12 e tecnologia de ponta. Desempenho extremo, design agressivo e uma experiência de direção única para quem busca exclusividade e velocidade.
 </p>
 
 <ul class="ficha">
-<li><strong>Motorização:</strong> V12 6.5 + 3 motores elétricos — 1015 cv combinados</li>
-<li><strong>Torque:</strong> 72 kgfm</li>
-<li><strong>Transmissão:</strong> Automática de dupla embreagem — 8 marchas</li>
-<li><strong>Tração:</strong> Integral (AWD)</li>
+<li><strong>Motor:</strong> V12 híbrido — 1000 cv</li>
+<li><strong>Bateria:</strong> 3,8 kWh (híbrida)</li>
+<li><strong>Autonomia:</strong> ~50 km elétrica / ilimitada híbrida</li>
 <li><strong>Aceleração (0–100 km/h):</strong> 2,5 s</li>
 <li><strong>Velocidade máxima:</strong> 350 km/h</li>
-<li><strong>Autonomia elétrica:</strong> 10 km (modo EV)</li>
-<li><strong>Peso:</strong> 1.772 kg</li>
-<li><strong>Preço (estimado):</strong> R$ 7.000.000</li>
+<li><strong>Preço (Brasil):</strong> R$ 9.500.000</li>
 </ul>
 
 <a href="esportivos.html" class="botao">Voltar aos modelos</a>
 </div>
-
 </section>
 
 <footer>
 © 2025 V12 Vibe — Todos os direitos reservados
 </footer>
-
-<script>
-const track = document.querySelector('.carousel-track');
-const slides = Array.from(track.children);
-const prevButton = document.querySelector('.carousel-button.prev');
-const nextButton = document.querySelector('.carousel-button.next');
-let currentIndex = 0;
-
-function updateCarousel() {
-    track.style.transform = 'translateX(-' + currentIndex * 100 + '%)';
-}
-
-nextButton.addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % slides.length;
-    updateCarousel();
-});
-
-prevButton.addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-    updateCarousel();
-});
-</script>
 
 </body>
 </html>
