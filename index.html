@@ -395,22 +395,17 @@
     return;
   }
 
-  resultadoDiv.innerHTML = filtrados.map(c => {
-    // transforma o nome do carro em formato de arquivo
-    const pagina = c.nome.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '') + '.html';
-
-    return `
-      <a href="${pagina}" style="text-decoration:none; color:inherit;">
-        <div class="car-card">
-          <h3>${c.nome}</h3>
-          <p><strong>Categoria:</strong> ${c.categoria}</p>
-          <p><strong>Potência:</strong> ${c.potencia} cv</p>
-          <p><strong>Autonomia:</strong> ${c.autonomia} km</p>
-          <p><strong>Preço:</strong> R$ ${c.preco.toLocaleString('pt-BR')}</p>
-        </div>
-      </a>
-    `;
-  }).join('');
+ resultadoDiv.innerHTML = filtrados.map(c => `
+  <a href="${c.link}" style="text-decoration:none; color:inherit;">
+    <div class="car-card">
+      <h3>${c.nome}</h3>
+      <p><strong>Categoria:</strong> ${c.categoria}</p>
+      <p><strong>Potência:</strong> ${c.potencia} cv</p>
+      <p><strong>Autonomia:</strong> ${c.autonomia} km</p>
+      <p><strong>Preço:</strong> R$ ${c.preco.toLocaleString('pt-BR')}</p>
+    </div>
+  </a>
+`).join('');
 }
   </script>
 
