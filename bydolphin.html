@@ -46,16 +46,14 @@ header nav a:hover {
     gap: 50px;
 }
 
-.carro-imagem {
-    flex: 1.5;
-}
-
 /* CARROSSEL */
 .carousel {
     position: relative;
     overflow: hidden;
     border-radius: 18px;
     box-shadow: 0 0 42px rgba(229, 9, 20, 0.4);
+    width: 100%;
+    max-width: 500px; /* menor que antes */
 }
 .carousel-track {
     display: flex;
@@ -63,7 +61,8 @@ header nav a:hover {
 }
 .carousel-track img {
     min-width: 100%;
-    border-radius: 18px;
+    height: auto; /* altura proporcional */
+    object-fit: contain; /* mantém proporção */
 }
 .carousel button {
     position: absolute;
@@ -85,6 +84,7 @@ header nav a:hover {
     right: 10px;
 }
 
+/* INFORMAÇÕES DO CARRO */
 .carro-info {
     flex: 0.9;
     background-color: #181818;
@@ -149,9 +149,10 @@ footer {
     }
     .carro-info {
         width: 100%;
+        margin-top: 30px;
     }
-    .carousel-track img {
-        max-width: 95%;
+    .carousel {
+        max-width: 100%;
     }
 }
 </style>
@@ -169,30 +170,29 @@ footer {
 </header>
 
 <section class="carro-container">
-
-<div class="carro-imagem">
-    <div class="carousel">
-        <button class="prev">&#10094;</button>
-        <div class="carousel-track">
-            <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202510/20251031/byd-dolphin-449-kw-eletrico-gs-wmimagem05153968539.webp?s=fill&w=552&h=414&q=60" alt="BYD Dolphin 1">
-            <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202510/20251031/byd-dolphin-449-kw-eletrico-gs-wmimagem05153879137.webp?s=fill&w=552&h=414&q=60" alt="BYD Dolphin 2">
-            <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202510/20251031/byd-dolphin-449-kw-eletrico-gs-wmimagem05153923536.webp?s=fill&w=552&h=414&q=60" alt="BYD Dolphin 3">
-            <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202510/20251031/byd-dolphin-449-kw-eletrico-gs-wmimagem05153951212.webp?s=fill&w=552&h=414&q=60" alt="BYD Dolphin 4">
-            <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202510/20251031/byd-dolphin-449-kw-eletrico-gs-wmimagem05153980137.webp?s=fill&w=552&h=414&q=60" alt="BYD Dolphin 5">
-            <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202510/20251031/byd-dolphin-449-kw-eletrico-gs-wmimagem05153994328.webp?s=fill&w=552&h=414&q=60" alt="BYD Dolphin 6">
-            <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202510/20251031/byd-dolphin-449-kw-eletrico-gs-wmimagem05154008017.webp?s=fill&w=552&h=414&q=60" alt="BYD Dolphin 7">
-            <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202510/20251031/byd-dolphin-449-kw-eletrico-gs-wmimagem05154039116.webp?s=fill&w=552&h=414&q=60" alt="BYD Dolphin 8">
-            <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202510/20251031/byd-dolphin-449-kw-eletrico-gs-wmimagem05154064419.webp?s=fill&w=552&h=414&q=60"BYD Dolphin 9">
-            <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202510/20251031/byd-dolphin-449-kw-eletrico-gs-wmimagem05154102012.webp?s=fill&w=552&h=414&q=60" alt="BYD Dolphin 10">
-        </div>
-        <button class="next">&#10095;</button>
+<!-- CARROSSEL -->
+<div class="carousel">
+    <div class="carousel-track">
+        <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202510/20251031/byd-dolphin-449-kw-eletrico-gs-wmimagem05153968539.webp?s=fill&w=552&h=414&q=60" alt="BYD Dolphin 1">
+        <img src="https://example.com/imagem2.jpg" alt="BYD Dolphin 2">
+        <img src="https://example.com/imagem3.jpg" alt="BYD Dolphin 3">
+        <img src="https://example.com/imagem4.jpg" alt="BYD Dolphin 4">
+        <img src="https://example.com/imagem5.jpg" alt="BYD Dolphin 5">
+        <img src="https://example.com/imagem6.jpg" alt="BYD Dolphin 6">
+        <img src="https://example.com/imagem7.jpg" alt="BYD Dolphin 7">
+        <img src="https://example.com/imagem8.jpg" alt="BYD Dolphin 8">
+        <img src="https://example.com/imagem9.jpg" alt="BYD Dolphin 9">
+        <img src="https://example.com/imagem10.jpg" alt="BYD Dolphin 10">
     </div>
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
 </div>
 
+<!-- INFORMAÇÕES DO CARRO -->
 <div class="carro-info">
 <h2>BYD Dolphin</h2>
 <p class="descricao">
-O BYD Dolphin combina tecnologia, conforto e eficiência em um design compacto e futurista. Seu motor elétrico potente e a bateria Blade oferecem excelente autonomia com segurança e confiabilidade.
+O BYD Dolphin combina tecnologia de ponta, conforto e eficiência em um design futurista e compacto. Seu motor elétrico potente e a bateria Blade oferecem excelente autonomia com segurança e confiabilidade.
 </p>
 
 <ul class="ficha">
@@ -215,14 +215,13 @@ O BYD Dolphin combina tecnologia, conforto e eficiência em um design compacto e
 <script>
 const track = document.querySelector('.carousel-track');
 const slides = Array.from(track.children);
-const nextButton = document.querySelector('.next');
 const prevButton = document.querySelector('.prev');
-
+const nextButton = document.querySelector('.next');
 let currentIndex = 0;
 
 function updateCarousel() {
     const slideWidth = slides[0].getBoundingClientRect().width;
-    track.style.transform = 'translateX(-' + currentIndex * slideWidth + 'px)';
+    track.style.transform = `translateX(-${slideWidth * currentIndex}px)`;
 }
 
 nextButton.addEventListener('click', () => {
