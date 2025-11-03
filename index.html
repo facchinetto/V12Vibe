@@ -288,15 +288,96 @@
     }, 3000);
 
     // PESQUISA DE VEÍCULOS
-    const carros = [
-      { nome: "BYD Dolphin", categoria: "Elétrico", preco: 149000, autonomia: 400, potencia: 95 },
-      { nome: "Ferrari SF90 Stradale", categoria: "Esportivo", preco: 5800000, autonomia: 500, potencia: 1000 },
-      { nome: "Toyota Corolla", categoria: "Sedan", preco: 280000, autonomia: 620, potencia: 177 },
-      { nome: "BMW X1", categoria: "SUV", preco: 420000, autonomia: 680, potencia: 170 },
-      { nome: "Volkswagen Golf", categoria: "Hatch", preco: 300000, autonomia: 650, potencia: 150 },
-      { nome: "Porsche 911", categoria: "Esportivo", preco: 1200000, autonomia: 550, potencia: 650 },
-      { nome: "Tesla Model S", categoria: "Elétrico", preco: 600000, autonomia: 650, potencia: 1020 },
-    ];
+   const carros = [
+  // ⚡ Elétricos
+  { nome: "BYD Dolphin", categoria: "Elétrico", preco: 149000, autonomia: 400, potencia: 95 },
+  { nome: "BYD Dolphin Mini", categoria: "Elétrico", preco: 119000, autonomia: 350, potencia: 75 },
+  { nome: "BYD Seal", categoria: "Elétrico", preco: 289000, autonomia: 520, potencia: 313 },
+  { nome: "Volvo EX30", categoria: "Elétrico", preco: 229000, autonomia: 480, potencia: 272 },
+  { nome: "Hyundai Ioniq 5", categoria: "Elétrico", preco: 310000, autonomia: 450, potencia: 305 },
+  { nome: "Porsche Taycan", categoria: "Elétrico", preco: 699000, autonomia: 430, potencia: 625 },
+  { nome: "Renault Kwid E-Tech", categoria: "Elétrico", preco: 139000, autonomia: 298, potencia: 65 },
+  { nome: "BMW iX1", categoria: "Elétrico", preco: 429000, autonomia: 440, potencia: 313 },
+  { nome: "GWM Ora 03", categoria: "Elétrico", preco: 150000, autonomia: 400, potencia: 171 },
+
+  // 🏎️ Esportivos
+  { nome: "Lamborghini Revuelto", categoria: "Esportivo", preco: 5700000, autonomia: 500, potencia: 1015 },
+  { nome: "Ferrari SF90 Stradale", categoria: "Esportivo", preco: 5800000, autonomia: 500, potencia: 1000 },
+  { nome: "BMW i8 Roadster", categoria: "Esportivo", preco: 900000, autonomia: 500, potencia: 374 },
+  { nome: "Mercedes AMG-GT", categoria: "Esportivo", preco: 1250000, autonomia: 480, potencia: 585 },
+  { nome: "Lotus Emira", categoria: "Esportivo", preco: 850000, autonomia: 500, potencia: 400 },
+  { nome: "Nissan GT-R", categoria: "Esportivo", preco: 1700000, autonomia: 500, potencia: 565 },
+  { nome: "Porsche 911", categoria: "Esportivo", preco: 999000, autonomia: 450, potencia: 580 },
+  { nome: "Audi R8", categoria: "Esportivo", preco: 1450000, autonomia: 480, potencia: 620 },
+  { nome: "BMW M8 Competition", categoria: "Esportivo", preco: 1350000, autonomia: 500, potencia: 625 },
+
+  // 🚗 Sedan
+  { nome: "BMW 320i", categoria: "Sedan", preco: 299000, autonomia: 600, potencia: 184 },
+  { nome: "Toyota Corolla", categoria: "Sedan", preco: 280000, autonomia: 620, potencia: 177 },
+  { nome: "Honda Civic", categoria: "Sedan", preco: 270000, autonomia: 610, potencia: 158 },
+  { nome: "Chevrolet Cruze", categoria: "Sedan", preco: 250000, autonomia: 600, potencia: 153 },
+  { nome: "Volkswagen Jetta", categoria: "Sedan", preco: 320000, autonomia: 630, potencia: 150 },
+  { nome: "Nissan Sentra", categoria: "Sedan", preco: 260000, autonomia: 610, potencia: 140 },
+  { nome: "Hyundai Elantra", categoria: "Sedan", preco: 270000, autonomia: 620, potencia: 147 },
+  { nome: "Kia Cerato", categoria: "Sedan", preco: 265000, autonomia: 610, potencia: 130 },
+  { nome: "Peugeot 408", categoria: "Sedan", preco: 255000, autonomia: 600, potencia: 165 },
+  { nome: "Citroen C4 Lounge", categoria: "Sedan", preco: 260000, autonomia: 605, potencia: 167 },
+  { nome: "Toyota Camry", categoria: "Sedan", preco: 400000, autonomia: 650, potencia: 215 },
+  { nome: "Honda Accord", categoria: "Sedan", preco: 420000, autonomia: 660, potencia: 220 },
+  { nome: "BMW 530i", categoria: "Sedan", preco: 490000, autonomia: 670, potencia: 252 },
+  { nome: "Mercedes C180", categoria: "Sedan", preco: 450000, autonomia: 650, potencia: 156 },
+  { nome: "Audi A4", categoria: "Sedan", preco: 470000, autonomia: 660, potencia: 201 },
+  { nome: "Volkswagen Passat", categoria: "Sedan", preco: 430000, autonomia: 640, potencia: 220 },
+  { nome: "Nissan Altima", categoria: "Sedan", preco: 420000, autonomia: 630, potencia: 182 },
+  { nome: "Hyundai Sonata", categoria: "Sedan", preco: 410000, autonomia: 625, potencia: 190 },
+  { nome: "Kia Optima", categoria: "Sedan", preco: 405000, autonomia: 620, potencia: 180 },
+  { nome: "Chevrolet Malibu", categoria: "Sedan", preco: 395000, autonomia: 615, potencia: 170 },
+
+  // 🚙 SUVs
+  { nome: "Toyota RAV4", categoria: "SUV", preco: 350000, autonomia: 700, potencia: 222 },
+  { nome: "Honda CR-V", categoria: "SUV", preco: 340000, autonomia: 680, potencia: 190 },
+  { nome: "Hyundai Tucson", categoria: "SUV", preco: 330000, autonomia: 670, potencia: 185 },
+  { nome: "Kia Sportage", categoria: "SUV", preco: 320000, autonomia: 660, potencia: 177 },
+  { nome: "Jeep Compass", categoria: "SUV", preco: 360000, autonomia: 650, potencia: 187 },
+  { nome: "Chevrolet Tracker", categoria: "SUV", preco: 300000, autonomia: 640, potencia: 153 },
+  { nome: "Nissan Kicks", categoria: "SUV", preco: 290000, autonomia: 620, potencia: 120 },
+  { nome: "Volkswagen T-Cross", categoria: "SUV", preco: 310000, autonomia: 630, potencia: 150 },
+  { nome: "Ford EcoSport", categoria: "SUV", preco: 280000, autonomia: 610, potencia: 140 },
+  { nome: "BMW X1", categoria: "SUV", preco: 420000, autonomia: 680, potencia: 170 },
+  { nome: "Mercedes GLA", categoria: "SUV", preco: 450000, autonomia: 700, potencia: 163 },
+  { nome: "Audi Q3", categoria: "SUV", preco: 430000, autonomia: 690, potencia: 230 },
+  { nome: "Volvo XC40", categoria: "SUV", preco: 500000, autonomia: 700, potencia: 231 },
+  { nome: "Jeep Renegade", categoria: "SUV", preco: 310000, autonomia: 620, potencia: 139 },
+  { nome: "Hyundai Creta", categoria: "SUV", preco: 320000, autonomia: 650, potencia: 177 },
+  { nome: "Toyota Corolla Cross", categoria: "SUV", preco: 360000, autonomia: 680, potencia: 177 },
+  { nome: "Kia Seltos", categoria: "SUV", preco: 340000, autonomia: 670, potencia: 177 },
+  { nome: "Peugeot 2008", categoria: "SUV", preco: 350000, autonomia: 660, potencia: 165 },
+  { nome: "Renault Captur", categoria: "SUV", preco: 310000, autonomia: 650, potencia: 155 },
+  { nome: "MG ZS", categoria: "SUV", preco: 300000, autonomia: 640, potencia: 162 },
+
+  // 🚗 Hatch
+  { nome: "Volkswagen Golf", categoria: "Hatch", preco: 300000, autonomia: 650, potencia: 150 },
+  { nome: "Ford Fiesta", categoria: "Hatch", preco: 200000, autonomia: 600, potencia: 120 },
+  { nome: "Chevrolet Onix", categoria: "Hatch", preco: 150000, autonomia: 580, potencia: 116 },
+  { nome: "Hyundai HB20", categoria: "Hatch", preco: 155000, autonomia: 580, potencia: 130 },
+  { nome: "Toyota Yaris", categoria: "Hatch", preco: 180000, autonomia: 600, potencia: 110 },
+  { nome: "Honda Fit", categoria: "Hatch", preco: 160000, autonomia: 590, potencia: 116 },
+  { nome: "Renault Sandero", categoria: "Hatch", preco: 140000, autonomia: 570, potencia: 82 },
+  { nome: "Nissan March", categoria: "Hatch", preco: 135000, autonomia: 560, potencia: 78 },
+  { nome: "Volkswagen Polo", categoria: "Hatch", preco: 200000, autonomia: 600, potencia: 128 },
+  { nome: "Fiat Argo", categoria: "Hatch", preco: 145000, autonomia: 580, potencia: 130 },
+  { nome: "Kia Rio", categoria: "Hatch", preco: 170000, autonomia: 600, potencia: 120 },
+  { nome: "Suzuki Swift", categoria: "Hatch", preco: 155000, autonomia: 590, potencia: 110 },
+  { nome: "Peugeot 208", categoria: "Hatch", preco: 180000, autonomia: 600, potencia: 130 },
+  { nome: "Citroen C3", categoria: "Hatch", preco: 160000, autonomia: 580, potencia: 115 },
+  { nome: "MG3", categoria: "Hatch", preco: 145000, autonomia: 570, potencia: 110 },
+  { nome: "Chevrolet Spark", categoria: "Hatch", preco: 130000, autonomia: 560, potencia: 98 },
+  { nome: "Renault Clio", categoria: "Hatch", preco: 150000, autonomia: 580, potencia: 115 },
+  { nome: "Fiat Punto", categoria: "Hatch", preco: 140000, autonomia: 570, potencia: 110 },
+  { nome: "Honda Brio", categoria: "Hatch", preco: 135000, autonomia: 560, potencia: 90 },
+  { nome: "Toyota Etios", categoria: "Hatch", preco: 150000, autonomia: 580, potencia: 108 }
+];
+
 
     function pesquisar() {
       const nome = document.getElementById('nomeCarro').value.toLowerCase();
