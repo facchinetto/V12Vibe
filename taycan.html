@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Porsche Taycan | V12 Vibe</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #0d0d0d;
+    color: #fff;
+}
+
+/* HEADER */
+header {
+    background-color: #111;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    border-bottom: 2px solid #e50914;
+}
+header h1 {
+    color: #e50914;
+    font-size: 28px;
+    margin: 0;
+}
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+header nav a:hover {
+    color: #e50914;
+}
+
+/* CONTEÚDO PRINCIPAL */
+.carro-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 60px 10%;
+    gap: 50px;
+}
+.carro-imagem {
+    flex: 1.6;
+    text-align: center;
+}
+.carro-imagem img {
+    width: 100%;
+    max-width: 850px;
+    border-radius: 18px;
+    box-shadow: 0 0 42px rgba(229, 9, 20, 0.4);
+}
+.carro-info {
+    flex: 0.9;
+    background-color: #181818;
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
+}
+.carro-info h2 {
+    color: #e50914;
+    font-size: 34px;
+    margin-bottom: 12px;
+}
+.descricao {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #ccc;
+    margin-bottom: 25px;
+}
+.ficha {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.ficha li {
+    padding: 10px 0;
+    border-bottom: 1px solid #333;
+}
+.ficha li strong {
+    color: #e50914;
+}
+.botao {
+    display: inline-block;
+    margin-top: 30px;
+    background-color: #e50914;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+.botao:hover {
+    background-color: #b00610;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 25px;
+    background-color: #111;
+    border-top: 2px solid #e50914;
+    color: #888;
+    margin-top: 60px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 950px) {
+    .carro-container {
+        flex-direction: column;
+        padding: 40px 5%;
+    }
+    .carro-info {
+        width: 100%;
+    }
+    .carro-imagem img {
+        max-width: 95%;
+    }
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>V12 Vibe</h1>
+<nav>
+    <a href="index.html">Início</a>
+    <a href="eletricos.html">Elétricos</a>
+    <a href="esportivos.html">Esportivos</a>
+    <a href="contato.html">Contato</a>
+</nav>
+</header>
+
+<section class="carro-container">
+<div class="carro-imagem">
+<img src="https://cdn.motor1.com/images/mgl/yo6lJx/s1/porsche-taycan-turbo-s-2024.jpg" alt="Porsche Taycan">
+</div>
+
+<div class="carro-info">
+<h2>Porsche Taycan</h2>
+<p class="descricao">
+O Porsche Taycan é o primeiro carro 100% elétrico da marca alemã, unindo luxo, tecnologia e desempenho. Seu design elegante e aerodinâmico esconde uma potência impressionante e uma dirigibilidade precisa — mantendo a alma esportiva clássica da Porsche.
+</p>
+
+<ul class="ficha">
+<li><strong>Motorização:</strong> 2 motores elétricos — até 761 cv (versão Turbo S)</li>
+<li><strong>Torque:</strong> 107 kgfm</li>
+<li><strong>Transmissão:</strong> Automática — 2 marchas (traseira)</li>
+<li><strong>Tração:</strong> Integral (AWD)</li>
+<li><strong>Aceleração (0–100 km/h):</strong> 2,8 s (Turbo S)</li>
+<li><strong>Velocidade máxima:</strong> 260 km/h</li>
+<li><strong>Autonomia:</strong> até 510 km (WLTP)</li>
+<li><strong>Bateria:</strong> 93,4 kWh</li>
+<li><strong>Preço (Brasil):</strong> R$ 1.150.000</li>
+</ul>
+
+<a href="eletricos.html" class="botao">Voltar aos modelos</a>
+</div>
+</section>
+
+<footer>
+© 2025 V12 Vibe — Todos os direitos reservados
+</footer>
+
+</body>
+</html>
