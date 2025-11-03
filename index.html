@@ -111,7 +111,76 @@
       background-color: #b00610;
     }
 
-    /* FOOTER */
+    /* ÁREA DE PESQUISA */
+    .pesquisa {
+      margin-top: 80px;
+      text-align: center;
+    }
+
+    .pesquisa h2 {
+      color: #e50914;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    input, select {
+      background-color: #181818;
+      border: 2px solid #e50914;
+      color: white;
+      padding: 12px 15px;
+      border-radius: 8px;
+      font-size: 16px;
+      margin: 10px;
+      width: 250px;
+    }
+
+    button {
+      background-color: #e50914;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #b00610;
+    }
+
+    .resultado {
+      margin-top: 50px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .car-card {
+      background-color: #181818;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.7);
+      text-align: left;
+      transition: transform 0.3s;
+    }
+
+    .car-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .car-card h3 {
+      color: #e50914;
+      margin-bottom: 10px;
+    }
+
+    .car-card p {
+      color: #ccc;
+      line-height: 1.5;
+      font-size: 15px;
+      margin: 3px 0;
+    }
+
     footer {
       text-align: center;
       padding: 25px;
@@ -121,7 +190,6 @@
       margin-top: 60px;
     }
 
-    /* RESPONSIVO */
     @media (max-width: 950px) {
       main {
         padding: 40px 5%;
@@ -129,7 +197,6 @@
     }
   </style>
 </head>
-
 <body>
 
   <header>
@@ -143,8 +210,8 @@
       <p>Explore as categorias e descubra o poder da mobilidade moderna</p>
     </div>
 
+    <!-- CATEGORIAS -->
     <div class="categories">
-
       <a href="eletricos.html" class="category-card">
         <h3>Elétricos</h3>
         <p>Sustentabilidade e tecnologia sem abrir mão da performance.</p>
@@ -168,13 +235,70 @@
         <p>Eficiência e praticidade sem perder o estilo.</p>
         <span class="btn">Ver modelos</span>
       </a>
-
     </div>
+
+    <!-- PESQUISA DE VEÍCULOS -->
+    <section class="pesquisa">
+      <h2>🔍 Pesquise um veículo específico</h2>
+      <div>
+        <input type="text" id="nomeCarro" placeholder="Digite o nome do veículo...">
+        <select id="categoria">
+          <option value="">Todas as categorias</option>
+          <option value="Elétrico">Elétricos</option>
+          <option value="Esportivo">Esportivos</option>
+          <option value="SUV">SUV</option>
+          <option value="Sedan">Sedans</option>
+          <option value="Hatch">Hatch</option>
+        </select>
+        <button onclick="pesquisar()">Pesquisar</button>
+      </div>
+
+      <div class="resultado" id="resultado"></div>
+    </section>
   </main>
 
   <footer>
     © 2025 V12 Vibe — Todos os direitos reservados
   </footer>
+
+  <script>
+    const carros = [
+      { nome: "BYD Dolphin", categoria: "Elétrico", preco: 149000, autonomia: 400, potencia: 95 },
+      { nome: "Tesla Model 3", categoria: "Elétrico", preco: 299000, autonomia: 510, potencia: 283 },
+      { nome: "Porsche 911", categoria: "Esportivo", preco: 999000, autonomia: 450, potencia: 580 },
+      { nome: "Chevrolet Onix", categoria: "Hatch", preco: 89900, autonomia: 650, potencia: 116 },
+      { nome: "Toyota Corolla", categoria: "Sedan", preco: 159000, autonomia: 700, potencia: 177 },
+      { nome: "BMW X6", categoria: "SUV", preco: 679000, autonomia: 600, potencia: 530 },
+      { nome: "Mustang GT", categoria: "Esportivo", preco: 499000, autonomia: 480, potencia: 466 },
+    ];
+
+    function pesquisar() {
+      const nome = document.getElementById('nomeCarro').value.toLowerCase();
+      const categoria = document.getElementById('categoria').value;
+      const resultadoDiv = document.getElementById('resultado');
+
+      const filtrados = carros.filter(c => {
+        const nomeMatch = c.nome.toLowerCase().includes(nome);
+        const categoriaMatch = categoria === "" || c.categoria === categoria;
+        return nomeMatch && categoriaMatch;
+      });
+
+      if (filtrados.length === 0) {
+        resultadoDiv.innerHTML = "<p style='color:#ccc;'>⚠️ Nenhum veículo encontrado.</p>";
+        return;
+      }
+
+      resultadoDiv.innerHTML = filtrados.map(c => `
+        <div class="car-card">
+          <h3>${c.nome}</h3>
+          <p><strong>Categoria:</strong> ${c.categoria}</p>
+          <p><strong>Potência:</strong> ${c.potencia} cv</p>
+          <p><strong>Autonomia:</strong> ${c.autonomia} km</p>
+          <p><strong>Preço:</strong> R$ ${c.preco.toLocaleString('pt-BR')}</p>
+        </div>
+      `).join('');
+    }
+  </script>
 
 </body>
 </html>
