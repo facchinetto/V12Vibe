@@ -45,16 +45,44 @@ header nav a:hover {
     padding: 60px 10%;
     gap: 50px;
 }
-.carro-imagem {
-    flex: 1.5;
-    text-align: center;
-}
-.carro-imagem img {
+
+/* CARROSSEL */
+.carousel {
+    position: relative;
     width: 100%;
     max-width: 800px;
+    overflow: hidden;
     border-radius: 18px;
     box-shadow: 0 0 42px rgba(229, 9, 20, 0.4);
 }
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+.carousel-images img {
+    width: 100%;
+    flex-shrink: 0;
+}
+.carousel button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(229, 9, 20, 0.5);
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    padding: 8px 14px;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+.carousel button:hover {
+    background-color: rgba(229, 9, 20, 0.9);
+}
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* INFO */
 .carro-info {
     flex: 0.9;
     background-color: #181818;
@@ -132,39 +160,57 @@ footer {
 <h1>V12 Vibe</h1>
 <nav>
     <a href="index.html">Início</a>
-    <a href="eletricos.html">Elétricos</a>
-    <a href="esportivos.html">Esportivos</a>
     <a href="contato.html">Contato</a>
 </nav>
 </header>
 
 <section class="carro-container">
 <div class="carro-imagem">
-<img src="https://cdn.motor1.com/images/mgl/6x3P4/s3/ferrari-sf90-stradale.jpg" alt="Ferrari SF90 Stradale">
+    <div class="carousel">
+        <div class="carousel-images">
+            <img src="https://cdn.motor1.com/images/mgl/ozN2x/s1/ferrari-sf90-stradale-2020.jpg" alt="Ferrari SF90 Stradale Frontal">
+            <img src="https://cdn.motor1.com/images/mgl/9Pzqq/s1/ferrari-sf90-stradale-traseira.jpg" alt="Ferrari SF90 Stradale Traseira">
+            <img src="https://cdn.motor1.com/images/mgl/0eB2x/s1/ferrari-sf90-stradale-interior.jpg" alt="Ferrari SF90 Stradale Interior">
+        </div>
+        <button class="prev" onclick="mudarSlide(-1)">&#10094;</button>
+        <button class="next" onclick="mudarSlide(1)">&#10095;</button>
+    </div>
 </div>
 
 <div class="carro-info">
 <h2>Ferrari SF90 Stradale</h2>
 <p class="descricao">
-A Ferrari SF90 Stradale é um supercarro híbrido plug-in que combina potência extrema com tecnologia avançada. Com motor V8 biturbo e três motores elétricos, oferece desempenho inigualável e experiência de condução emocionante.
+A Ferrari SF90 Stradale representa o auge da inovação da marca italiana. É o primeiro híbrido plug-in da Ferrari, combinando um V8 biturbo com três motores elétricos para desempenho extremo e resposta instantânea.
 </p>
 
 <ul class="ficha">
-<li><strong>Motor:</strong> V8 biturbo + 3 elétricos — 1000 cv</li>
-<li><strong>Bateria:</strong> 7,9 kWh Li-ion</li>
-<li><strong>Autonomia elétrica:</strong> 25 km</li>
-<li><strong>Aceleração (0–100 km/h):</strong> 2,5 s</li>
-<li><strong>Velocidade máxima:</strong> 340 km/h</li>
-<li><strong>Preço (Brasil):</strong> R$ 5.900.000</li>
+<li><strong>Ano:</strong> 2025</li>
+<li><strong>Motor:</strong> V8 4.0L biturbo híbrido</li>
+<li><strong>Potência:</strong> 1.000 cv</li>
+<li><strong>Autonomia:</strong> 25 km (modo elétrico)</li>
+<li><strong>Velocidade Máxima:</strong> 340 km/h</li>
+<li><strong>Preço:</strong> R$ 8.000.000</li>
 </ul>
 
-<a href="esportivos.html" class="botao">Voltar aos modelos</a>
+<a href="index.html" class="botao">Voltar</a>
 </div>
 </section>
 
 <footer>
 © 2025 V12 Vibe — Todos os direitos reservados
 </footer>
+
+<script>
+let slideIndex = 0;
+const slides = document.querySelectorAll('.carousel-images img');
+
+function mudarSlide(direcao) {
+    slideIndex += direcao;
+    if (slideIndex < 0) slideIndex = slides.length - 1;
+    if (slideIndex >= slides.length) slideIndex = 0;
+    document.querySelector('.carousel-images').style.transform = `translateX(-${slideIndex * 100}%)`;
+}
+</script>
 
 </body>
 </html>
