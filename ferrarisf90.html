@@ -45,44 +45,57 @@ header nav a:hover {
     padding: 60px 10%;
     gap: 50px;
 }
-
-/* CARROSSEL */
-.carousel {
+.carro-imagem {
+    flex: 1.5;
+    text-align: center;
     position: relative;
+}
+.carro-imagem img {
     width: 100%;
     max-width: 800px;
-    overflow: hidden;
     border-radius: 18px;
     box-shadow: 0 0 42px rgba(229, 9, 20, 0.4);
 }
-.carousel-images {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-.carousel-images img {
+
+/* CARROSSEL DE IMAGENS */
+.carrossel {
+    position: relative;
     width: 100%;
-    flex-shrink: 0;
+    max-width: 800px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 18px;
 }
-.carousel button {
+.carrossel img {
+    width: 100%;
+    display: none;
+}
+.carrossel img.ativo {
+    display: block;
+}
+.seta {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(229, 9, 20, 0.5);
-    border: none;
+    background-color: rgba(0,0,0,0.5);
     color: white;
-    font-size: 28px;
+    border: none;
+    padding: 10px;
     cursor: pointer;
-    padding: 8px 14px;
+    font-size: 22px;
     border-radius: 50%;
-    transition: background 0.3s;
 }
-.carousel button:hover {
-    background-color: rgba(229, 9, 20, 0.9);
+.seta:hover {
+    background-color: rgba(229, 9, 20, 0.8);
 }
-.prev { left: 10px; }
-.next { right: 10px; }
+.esquerda {
+    left: 10px;
+}
+.direita {
+    right: 10px;
+}
 
-/* INFO */
+/* INFORMAÇÕES */
 .carro-info {
     flex: 0.9;
     background-color: #181818;
@@ -166,33 +179,32 @@ footer {
 
 <section class="carro-container">
 <div class="carro-imagem">
-    <div class="carousel">
-        <div class="carousel-images">
-            <img src="https://cdn.motor1.com/images/mgl/ozN2x/s1/ferrari-sf90-stradale-2020.jpg" alt="Ferrari SF90 Stradale Frontal">
-            <img src="https://cdn.motor1.com/images/mgl/9Pzqq/s1/ferrari-sf90-stradale-traseira.jpg" alt="Ferrari SF90 Stradale Traseira">
-            <img src="https://cdn.motor1.com/images/mgl/0eB2x/s1/ferrari-sf90-stradale-interior.jpg" alt="Ferrari SF90 Stradale Interior">
-        </div>
-        <button class="prev" onclick="mudarSlide(-1)">&#10094;</button>
-        <button class="next" onclick="mudarSlide(1)">&#10095;</button>
+    <div class="carrossel">
+        <img src="https://cdn.motor1.com/images/mgl/OoP7oW/s1/ferrari-sf90-stradale-2023.jpg" class="ativo" alt="Ferrari SF90 Stradale 1">
+        <img src="https://cdn.motor1.com/images/mgl/OoP7oW/s1/ferrari-sf90-stradale-2022.jpg" alt="Ferrari SF90 Stradale 2">
+        <img src="https://cdn.motor1.com/images/mgl/OoP7oW/s1/ferrari-sf90-stradale-interior.jpg" alt="Ferrari SF90 Stradale 3">
+        <button class="seta esquerda" onclick="mudarImagem(-1)">❮</button>
+        <button class="seta direita" onclick="mudarImagem(1)">❯</button>
     </div>
 </div>
 
 <div class="carro-info">
 <h2>Ferrari SF90 Stradale</h2>
 <p class="descricao">
-A Ferrari SF90 Stradale representa o auge da inovação da marca italiana. É o primeiro híbrido plug-in da Ferrari, combinando um V8 biturbo com três motores elétricos para desempenho extremo e resposta instantânea.
+A Ferrari SF90 Stradale é um supercarro híbrido plug-in que une um motor V8 biturbo a três motores elétricos, oferecendo desempenho extremo e tecnologia avançada, redefinindo o conceito de performance da marca italiana.
 </p>
 
 <ul class="ficha">
-<li><strong>Ano:</strong> 2025</li>
-<li><strong>Motor:</strong> V8 4.0L biturbo híbrido</li>
-<li><strong>Potência:</strong> 1.000 cv</li>
-<li><strong>Autonomia:</strong> 25 km (modo elétrico)</li>
-<li><strong>Velocidade Máxima:</strong> 340 km/h</li>
-<li><strong>Preço:</strong> R$ 8.000.000</li>
+    <li><strong>Motorização:</strong> V8 biturbo + 3 motores elétricos</li>
+    <li><strong>Potência combinada:</strong> 1.000 cv</li>
+    <li><strong>Tração:</strong> Integral</li>
+    <li><strong>Torque:</strong> 81,6 kgfm</li>
+    <li><strong>Aceleração (0–100 km/h):</strong> 2,5 s</li>
+    <li><strong>Velocidade máxima:</strong> 340 km/h</li>
+    <li><strong>Preço aproximado:</strong> R$ 7.400.000</li>
 </ul>
 
-<a href="index.html" class="botao">Voltar</a>
+<a href="index.html" class="botao">Voltar aos modelos</a>
 </div>
 </section>
 
@@ -201,14 +213,12 @@ A Ferrari SF90 Stradale representa o auge da inovação da marca italiana. É o 
 </footer>
 
 <script>
-let slideIndex = 0;
-const slides = document.querySelectorAll('.carousel-images img');
-
-function mudarSlide(direcao) {
-    slideIndex += direcao;
-    if (slideIndex < 0) slideIndex = slides.length - 1;
-    if (slideIndex >= slides.length) slideIndex = 0;
-    document.querySelector('.carousel-images').style.transform = `translateX(-${slideIndex * 100}%)`;
+let indice = 0;
+const imagens = document.querySelectorAll('.carrossel img');
+function mudarImagem(direcao) {
+    imagens[indice].classList.remove('ativo');
+    indice = (indice + direcao + imagens.length) % imagens.length;
+    imagens[indice].classList.add('ativo');
 }
 </script>
 
