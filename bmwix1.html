@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>Lamborghini Revuelto | V12 Vibe</title>
+<title>BMW iX1 | V12 Vibe</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 body {
@@ -11,6 +11,8 @@ body {
     background-color: #0d0d0d;
     color: #fff;
 }
+
+/* HEADER */
 header {
     background-color: #111;
     display: flex;
@@ -31,8 +33,11 @@ header nav a {
     font-size: 16px;
     transition: color 0.3s;
 }
-header nav a:hover { color: #e50914; }
+header nav a:hover {
+    color: #e50914;
+}
 
+/* CONTEÚDO PRINCIPAL */
 .carro-container {
     display: flex;
     justify-content: space-between;
@@ -40,32 +45,113 @@ header nav a:hover { color: #e50914; }
     padding: 60px 10%;
     gap: 50px;
 }
-.carro-imagem { flex: 1.3; text-align: center; }
-.carro-imagem img {
+
+/* CARROSSEL */
+.carousel {
+    position: relative;
     width: 100%;
-    max-width: 600px;
+    max-width: 800px;
+    overflow: hidden;
     border-radius: 18px;
     box-shadow: 0 0 42px rgba(229, 9, 20, 0.4);
 }
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+.carousel-images img {
+    width: 100%;
+    flex-shrink: 0;
+}
+.carousel button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(229, 9, 20, 0.5);
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 8px 14px;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+.carousel button:hover {
+    background-color: rgba(229, 9, 20, 0.9);
+}
+.prev {
+    left: 10px;
+}
+.next {
+    right: 10px;
+}
+
+/* INFO */
 .carro-info {
     flex: 0.9;
     background-color: #181818;
     padding: 35px;
     border-radius: 16px;
-    box-shadow: 0 0 25px rgba(0,0,0,0.8);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
 }
-.carro-info h2 { color: #e50914; font-size: 34px; margin-bottom: 12px; }
-.descricao { font-size: 15px; line-height: 1.6; color: #ccc; margin-bottom: 25px; }
-.ficha { list-style: none; padding: 0; margin: 0; }
-.ficha li { padding: 10px 0; border-bottom: 1px solid #333; }
-.ficha li strong { color: #e50914; }
-.botao { display: inline-block; margin-top: 30px; background-color: #e50914; color: white; border: none; padding: 12px 25px; font-size: 16px; border-radius: 8px; text-decoration: none; transition: background 0.3s; }
-.botao:hover { background-color: #b00610; }
-footer { text-align: center; padding: 25px; background-color: #111; border-top: 2px solid #e50914; color: #888; margin-top: 60px; }
+.carro-info h2 {
+    color: #e50914;
+    font-size: 34px;
+    margin-bottom: 12px;
+}
+.descricao {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #ccc;
+    margin-bottom: 25px;
+}
+.ficha {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.ficha li {
+    padding: 10px 0;
+    border-bottom: 1px solid #333;
+}
+.ficha li strong {
+    color: #e50914;
+}
+.botao {
+    display: inline-block;
+    margin-top: 30px;
+    background-color: #e50914;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+.botao:hover {
+    background-color: #b00610;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 25px;
+    background-color: #111;
+    border-top: 2px solid #e50914;
+    color: #888;
+    margin-top: 60px;
+}
+
+/* RESPONSIVO */
 @media (max-width: 950px) {
-    .carro-container { flex-direction: column; padding: 40px 5%; }
-    .carro-info { width: 100%; }
-    .carro-imagem img { max-width: 90%; }
+    .carro-container {
+        flex-direction: column;
+        padding: 40px 5%;
+    }
+    .carro-info {
+        width: 100%;
+    }
 }
 </style>
 </head>
@@ -75,39 +161,60 @@ footer { text-align: center; padding: 25px; background-color: #111; border-top: 
 <h1>V12 Vibe</h1>
 <nav>
     <a href="index.html">Início</a>
-    <a href="eletricos.html">Elétricos</a>
-    <a href="esportivos.html">Esportivos</a>
     <a href="contato.html">Contato</a>
 </nav>
 </header>
 
 <section class="carro-container">
 <div class="carro-imagem">
-<img src="https://cdn.motor1.com/images/mgl/0AN0r/s1/lamborghini-revuelto-2024.jpg" alt="Lamborghini Revuelto">
+    <div class="carousel">
+        <div class="carousel-images">
+            <img src="https://cdn.motor1.com/images/mgl/OoP7oW/s1/bmw-ix1-xdrive30-2023.jpg" alt="BMW iX1 frontal">
+            <img src="https://cdn.motor1.com/images/mgl/LVV2jW/s1/bmw-ix1-xdrive30-traseira.jpg" alt="BMW iX1 traseira">
+            <img src="https://cdn.motor1.com/images/mgl/jk2qM/s1/bmw-ix1-xdrive30-interior.jpg" alt="BMW iX1 interior">
+        </div>
+        <button class="prev" onclick="mudarSlide(-1)">&#10094;</button>
+        <button class="next" onclick="mudarSlide(1)">&#10095;</button>
+    </div>
 </div>
 
 <div class="carro-info">
-<h2>Lamborghini Revuelto</h2>
+<h2>BMW iX1</h2>
 <p class="descricao">
-O Lamborghini Revuelto é um hipercarro híbrido com motor V12 e tecnologia de ponta. Desempenho extremo, design agressivo e uma experiência de direção única para quem busca exclusividade e velocidade.
+A BMW iX1 é a versão 100% elétrica do SUV compacto de luxo da marca alemã. Unindo desempenho, autonomia e conforto, o modelo entrega tecnologia de ponta e o visual imponente típico da linha X da BMW.
 </p>
 
 <ul class="ficha">
-<li><strong>Motor:</strong> V12 híbrido — 1000 cv</li>
-<li><strong>Bateria:</strong> 3,8 kWh (híbrida)</li>
-<li><strong>Autonomia:</strong> ~50 km elétrica / ilimitada híbrida</li>
-<li><strong>Aceleração (0–100 km/h):</strong> 2,5 s</li>
-<li><strong>Velocidade máxima:</strong> 350 km/h</li>
-<li><strong>Preço (Brasil):</strong> R$ 9.500.000</li>
+<li><strong>Motorização:</strong> 100% elétrica — 313 cv (duplo motor)</li>
+<li><strong>Torque:</strong> 50,4 kgfm</li>
+<li><strong>Tração:</strong> Integral (xDrive)</li>
+<li><strong>Bateria:</strong> 64,7 kWh</li>
+<li><strong>Autonomia:</strong> 440 km (WLTP)</li>
+<li><strong>Aceleração (0–100 km/h):</strong> 5,6 s</li>
+<li><strong>Velocidade máxima:</strong> 180 km/h</li>
+<li><strong>Tempo de recarga:</strong> 29 min (DC 130 kW) / 6,5h (AC 11 kW)</li>
+<li><strong>Preço (Brasil):</strong> R$ 429.950</li>
 </ul>
 
-<a href="esportivos.html" class="botao">Voltar aos modelos</a>
+<a href="index.html" class="botao">Voltar</a>
 </div>
 </section>
 
 <footer>
 © 2025 V12 Vibe — Todos os direitos reservados
 </footer>
+
+<script>
+let slideIndex = 0;
+const slides = document.querySelectorAll('.carousel-images img');
+
+function mudarSlide(direcao) {
+    slideIndex += direcao;
+    if (slideIndex < 0) slideIndex = slides.length - 1;
+    if (slideIndex >= slides.length) slideIndex = 0;
+    document.querySelector('.carousel-images').style.transform = `translateX(-${slideIndex * 100}%)`;
+}
+</script>
 
 </body>
 </html>
