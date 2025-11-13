@@ -1,1 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>BYD Dolphin | V12 Vibe</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #0d0d0d;
+    color: #fff;
+}
 
+/* HEADER */
+header {
+    background-color: #111;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    border-bottom: 2px solid #e50914;
+}
+header h1 {
+    color: #e50914;
+    font-size: 28px;
+    margin: 0;
+}
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+header nav a:hover {
+    color: #e50914;
+}
+
+/* CONTEÚDO PRINCIPAL */
+.carro-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 60px 10%;
+    gap: 50px;
+}
+
+/* CARROSSEL */
+.carousel {
+    position: relative;
+    overflow: hidden;
+    border-radius: 18px;
+    box-shadow: 0 0 42px rgba(229, 9, 20, 0.4);
+    width: 100%;
+    max-width: 650px; /* um pouco maior que antes */
+}
+.carousel-track {
+    display: flex;
+    transition: transform 0.4s ease-in-out;
+}
+.carousel-track img {
+    min-width: 100%;
+    height: auto; /* mantém a proporção */
+    object-fit: contain;
+}
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+.carousel-button.prev {
+    left: 10px;
+}
+.carousel-button.next {
+    right: 10px;
+}
+
+/* INFORMAÇÕES DO CARRO */
+.carro-info {
+    flex: 0.9;
+    background-color: #181818;
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
+}
+.carro-info h2 {
+    color: #e50914;
+    font-size: 34px;
+    margin-bottom: 12px;
+}
+.descricao {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #ccc;
+    margin-bottom: 25px;
+}
+.ficha {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.ficha li {
+    padding: 10px 0;
+    border-bottom: 1px solid #333;
+}
+.ficha li strong {
+    color: #e50914;
+}
+.botao {
+    display: inline-block;
+    margin-top: 30px;
+    background-color: #e50914;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+.botao:hover {
+    background-color: #b00610;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 25px;
+    background-color: #111;
+    border-top: 2px solid #e50914;
+    color: #888;
+    margin-top: 60px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 950px) {
+    .carro-container {
+        flex-direction: column;
+        padding: 40px 5%;
+    }
+    .carro-info {
+        width: 100%;
+    }
+    .carousel {
+        max-width: 95%;
+    }
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>V12 Vibe</h1>
+<nav>
+    <a href="index.html">Início</a>
+    <a href="contato.html">Contato</a>
+</nav>
+</header>
+
+<section class="carro-container">
+
+<div class="carousel">
+    <div class="carousel-track">
+                <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202510/20251031/byd-dolphin-449-kw-eletrico-gs-wmimagem05153879137.webp?s=fill&w=552&h=414&q=60" alt="BYD Dolphin 2">
+            <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202510/20251031/byd-dolphin-449-kw-eletrico-gs-wmimagem05153923536.webp?s=fill&w=552&h=414&q=60" alt="BYD Dolphin 3">
+            <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202510/20251031/byd-dolphin-449-kw-eletrico-gs-wmimagem05153951212.webp?s=fill&w=552&h=414&q=60" alt="BYD Dolphin 4">
+            <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202510/20251031/byd-dolphin-449-kw-eletrico-gs-wmimagem05153980137.webp?s=fill&w=552&h=414&q=60" alt="BYD Dolphin 5">
+            <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202510/20251031/byd-dolphin-449-kw-eletrico-gs-wmimagem05153994328.webp?s=fill&w=552&h=414&q=60" alt="BYD Dolphin 6">
+            <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202510/20251031/byd-dolphin-449-kw-eletrico-gs-wmimagem05154008017.webp?s=fill&w=552&h=414&q=60" alt="BYD Dolphin 7">
+            <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202510/20251031/byd-dolphin-449-kw-eletrico-gs-wmimagem05154039116.webp?s=fill&w=552&h=414&q=60" alt="BYD Dolphin 8">
+            <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202510/20251031/byd-dolphin-449-kw-eletrico-gs-wmimagem05154064419.webp?s=fill&w=552&h=414&q=60"BYD Dolphin 9">
+            <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202510/20251031/byd-dolphin-449-kw-eletrico-gs-wmimagem05154102012.webp?s=fill&w=552&h=414&q=60" alt="BYD Dolphin 10">
+    </div>
+    <button class="carousel-button prev">&#10094;</button>
+    <button class="carousel-button next">&#10095;</button>
+</div>
+
+<div class="carro-info">
+<h2>BYD Dolphin</h2>
+<p class="descricao">
+O BYD Dolphin combina tecnologia, conforto e eficiência em um design compacto e futurista. Seu motor elétrico potente e a bateria Blade oferecem excelente autonomia com segurança e confiabilidade.
+</p>
+
+<ul class="ficha">
+<li><strong>Motor:</strong> Elétrico dianteiro — 204 cv</li>
+<li><strong>Bateria:</strong> Blade LFP — 60,5 kWh</li>
+<li><strong>Autonomia:</strong> 490 km (NEDC) / ~380 km reais</li>
+    <li><strong>Torque:</strong> 31,6kgfm</li>
+<li><strong>Aceleração (0–100 km/h):</strong> 7,0 s</li>
+<li><strong>Velocidade máxima:</strong> 160 km/h</li>
+<li><strong>Preço (Brasil):</strong> R$ 179.800</li>
+</ul>
+
+<a href="index.html" class="botao">Voltar aos modelos</a>
+</div>
+</section>
+
+<footer>
+© 2025 V12 Vibe — Todos os direitos reservados
+</footer>
+
+<script>
+const track = document.querySelector('.carousel-track');
+const slides = Array.from(track.children);
+const prevButton = document.querySelector('.carousel-button.prev');
+const nextButton = document.querySelector('.carousel-button.next');
+let currentIndex = 0;
+
+function updateCarousel() {
+    track.style.transform = 'translateX(-' + currentIndex * 100 + '%)';
+}
+
+nextButton.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % slides.length;
+    updateCarousel();
+});
+
+prevButton.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    updateCarousel();
+});
+</script>
+
+</body>
+</html>
